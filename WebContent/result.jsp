@@ -23,9 +23,10 @@
 <style>
 	@import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
      body{background-color: #f7f0da;}
-     #topLogo{font-family: "Karma", sans-serif; font-size : 30px; vertical-align: bottom;}
+      #topLogo{font-family: 'Jeju Hallasan',cursive; font-size : 30px; vertical-align: middle;}
      nav div div a{font-family: 'Jeju Hallasan',cursive;}
-     body > nav > div > a {display:block; margin-left: 40%;}
+     body > nav > div > a { margin-left: 20%;}
+     
      body > div > div > div.col-lg-9 > h1{font-family: 'Jeju Hallasan',cursive;}
      body > div > div > div.col-lg-9 button {font-family: 'Jeju Hallasan',cursive;}
   </style>
@@ -36,8 +37,9 @@
   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d4633">
     <div class="container">
+    <span  style = "color : white; font-size: 14px; font-family: 'Jeju Hallasan',cursive; ">27년 변하지 않는 전통과 정성으로...</span>
 
-      <a class="navbar-brand" href="#" id = "topLogo">KOSTA</a>
+      <a class="navbar-brand" href="#" id = "topLogo">효모네 빵집</a>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
