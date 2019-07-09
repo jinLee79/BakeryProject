@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1> 회원이 자신의 주문 목록을 보는 페이지입니다. </h1>
 </body>
 </html>

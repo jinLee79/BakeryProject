@@ -2,72 +2,72 @@ package kosta.model.dto;
 
 public class OrderDTO {
 	
-	private String orderNo; //주문번호
-	private String code;  //상품코드
+	private int orderNo; //주문번호
 	private String userId; //주문한 회원Id
-	private int quantity;  //상품개수
 	private String orderDate; //주문일자
+	private String receivingDate; //예상수령일
 	private int orderTotal;  //주문총금액
-	private String orderStatus; //주문상태
+	private String orderState; //주문상태
 	
 	public OrderDTO() {	}
 
-	public OrderDTO(String orderNo, String code, String userId, String orderDate, int quantity, int orderTotal,
-			String orderStatus) {
-		super();
+	public OrderDTO(int orderNo, String userId, String orderDate, String receivingDate, int orderTotal,
+			String orderState) {
 		this.orderNo = orderNo;
-		this.code = code;
 		this.userId = userId;
-		this.quantity = quantity;
 		this.orderDate = orderDate;
+		this.receivingDate = receivingDate;
 		this.orderTotal = orderTotal;
-		this.orderStatus = orderStatus;
+		this.orderState = orderState;
 	}
 
-	public String getOrderNo() {
+	public int getOrderNo() {
 		return orderNo;
 	}
-	public void setOrderNo(String orderNo) {
+
+	public void setOrderNo(int orderNo) {
 		this.orderNo = orderNo;
 	}
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
+
 	public String getUserId() {
 		return userId;
 	}
+
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public int getQuantity() {
-		return quantity;
-	}
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
+
 	public String getOrderDate() {
 		return orderDate;
 	}
+
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
+	}
+
+	public String getReceivingDate() {
+		return receivingDate;
+	}
+
+	public void setReceivingDate(String receivingDate) {
+		this.receivingDate = receivingDate;
 	}
 
 	public int getOrderTotal() {
 		return orderTotal;
 	}
+
 	public void setOrderTotal(int orderTotal) {
 		this.orderTotal = orderTotal;
 	}
-	public String getOrderStatus() {
-		return orderStatus;
+
+	public String getOrderState() {
+		return orderState;
 	}
-	public void setOrderStatus(String orderStatus) {
-		this.orderStatus = orderStatus;
+
+	public void setOrderState(String orderState) {
+		this.orderState = orderState;
 	}
-	
-	
+
 	
 }

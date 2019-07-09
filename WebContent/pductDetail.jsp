@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>상품의 상세보기를 하는 페이지입니다. </h1>
 </body>
 </html>

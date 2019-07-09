@@ -1,32 +1,24 @@
 package kosta.model.dto;
 
 public class OrderDetailsDTO {
-	private String detailNo;  //주문상세번호
-	private String orderNo;
+	private int orderNo;
 	private String productCode; 
 	private int quantity;
 	private int sellPrice;
 	
 	public OrderDetailsDTO() {}
-
-	public OrderDetailsDTO(String detailNo, String orderNo, String productCode, int quantity, int sellPrice) {
-		this.detailNo = detailNo;
+	
+	public OrderDetailsDTO(int orderNo, String productCode, int quantity, int sellPrice) {
 		this.orderNo = orderNo;
 		this.productCode = productCode;
 		this.quantity = quantity;
 		this.sellPrice = sellPrice;
 	}
 
-	public String getDetailNo() {
-		return detailNo;
-	}
-	public void setDetailNo(String detailNo) {
-		this.detailNo = detailNo;
-	}
-	public String getOrderNo() {
+	public int getOrderNo() {
 		return orderNo;
 	}
-	public void setOrderNo(String orderNo) {
+	public void setOrderNo(int orderNo) {
 		this.orderNo = orderNo;
 	}
 	public String getProductCode() {

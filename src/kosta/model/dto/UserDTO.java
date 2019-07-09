@@ -7,18 +7,20 @@ public class UserDTO {
 	private int age;
 	private String phone;
 	private int point;
+	private String grade;
 
 	public UserDTO() {	}
-
-	public UserDTO(String userId, String userPwd, String userName, int age, String phone, int point) {
+	
+	public UserDTO(String userId, String userPwd, String userName, int age, String phone, int point, String grade) {
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.userName = userName;
 		this.age = age;
 		this.phone = phone;
 		this.point = point;
+		this.grade = grade;
 	}
-	
+
 	public String getUserId() {
 		return userId;
 	}
@@ -54,6 +56,13 @@ public class UserDTO {
 	}
 	public void setPoint(int point) {
 		this.point = point;
+	}
+
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 
 }

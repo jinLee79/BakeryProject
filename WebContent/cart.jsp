@@ -7,25 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	/**
-	 * 장바구니 목록 보여주기
-	 * viewCart()
-	 * 
-	 * */
-	
-	/**
-	 * 장바구니에 물건 삽입
-	 * insertCart
-	 * */
-	
-	/**
-	 * 장바구니 상품 수정
-	 * updateCart
-	 * */
-	
-	/**
-	 * 장바구니 상품 삭제
-	 * deleteCart
-	 * */
+<h1>장바구니 페이지 입니다.</h1>
+<h3>
+localstorage에 장바구니 목록을 저장하고,<br>
+물건을 삽입, 수량 수정, 삭제 하는 기능을 합니다.
+</h3>
 </body>
 </html>

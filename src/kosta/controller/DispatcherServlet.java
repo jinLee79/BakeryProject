@@ -26,7 +26,7 @@ public class DispatcherServlet extends HttpServlet {
 	}
 	protected void service(HttpServletRequest request, HttpServletResponse response) 
 																											throws ServletException, IOException {
-		String key = request.getParameter("command");
+		String key = request.getParameter("key");
 		
 		if(key==null) key="list";  //list는 전체검색. command값이 없으면 default로 list.jsp로 이동
 		

@@ -4,18 +4,17 @@ public class ProductDTO {
 	private String productCode;
 	private String productName;
 	private int sellPrice;
-	private int cost;
 	private String description;
 	private int readnum ;
 	private String fName;
 	
 	public ProductDTO() {	}
 	
-	public ProductDTO(String productCode, String productName, int sellPrice, int cost, String description, String fName) {
+	public ProductDTO(String productCode, String productName, int sellPrice, String description, int readnum,
+			String fName) {
 		this.productCode = productCode;
 		this.productName = productName;
 		this.sellPrice = sellPrice;
-		this.cost = cost;
 		this.description = description;
 		this.readnum = readnum;
 		this.fName = fName;
@@ -39,12 +38,7 @@ public class ProductDTO {
 	public void setSellPrice(int sellPrice) {
 		this.sellPrice = sellPrice;
 	}
-	public int getCost() {
-		return cost;
-	}
-	public void setCost(int cost) {
-		this.cost = cost;
-	}
+
 	public String getDescription() {
 		return description;
 	}
