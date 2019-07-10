@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,11 +40,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
 
-
-
-      
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -83,11 +80,11 @@
 <div class="card mt-4">
 <img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
 <div class="card-body">
-<h3 class="card-title">Product Name</h3>
+<h3 class="card-title" >Product Name</h3>
 <h4>$24.99</h4>
-<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente dicta fugit fugiat hic aliquam itaque facere, soluta. Totam id dolores, sint aperiam sequi pariatur praesentium animi perspiciatis molestias iure, ducimus!</p>
-<input type = button class = "btn btn-info" value = "장바구니 담기" >
-<input type = button class = "btn btn-info" value = "이전 페이지로" >
+<p class="card-text">Loremoiure, ducimus!</p>
+<input type = button class = "btn btn-info"  id="cart"  value = "장바구니 담기"  onclick="location.href='${pageContext.request.contextPath}/Cart'">
+<input type = button class = "btn btn-info" value = "이전 페이지로"  onclick="location.href='index.jsp'">
 
 </div>
 </div>

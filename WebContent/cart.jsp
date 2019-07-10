@@ -44,11 +44,7 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
 
-
-
-      
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -117,88 +113,7 @@
                   </tr>
                 </tfoot>
                 <tbody style = "text-align:center; vertical-align: bottom;">
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A08</td>
-                    <td>단팥빵</td>
-                    <td>3</td>
-                    <td>3000</td>
-                    <td>9000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A06</td>
-                    <td>소보루</td>
-                    <td>2</td>
-                    <td>3500</td>
-                    <td>7000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A04</td>
-                    <td>소세지빵</td>
-                    <td>5</td>
-                    <td>2000</td>
-                    <td>10000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A02</td>
-                    <td>메론빵</td>
-                    <td>3</td>
-                    <td>7000</td>
-                    <td>21000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A01</td>
-                    <td>식빵</td>
-                    <td>1</td>
-                    <td>6000</td>
-                    <td>6000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A03</td>
-                    <td>고로께</td>
-                    <td>2</td>
-                    <td>8000</td>
-                    <td>16000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A07</td>
-                    <td>감자빵</td>
-                    <td>5</td>
-                    <td>9000</td>
-                    <td>45000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A05</td>
-                    <td>옥수수식빵</td>
-                    <td>1</td>
-                    <td>10000</td>
-                    <td>10000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A09</td>
-                    <td>치즈계란빵</td>
-                    <td>8</td>
-                    <td>11000</td>
-                    <td>88000</td>
-                    <td></td>
-                  </tr>
-                 
+
                 </tbody>
               </table>
             </div>
@@ -208,7 +123,6 @@
 
       </div>
       <!-- /.container-fluid -->
-
 
 </div>
   <!-- ------------------------------------------ -->
@@ -230,28 +144,7 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   
-  
-  	/**
-	 * 장바구니 목록 보여주기
-	 * viewCart()
-	 * 
-	 * */
-	
-	/**
-	 * 장바구니에 물건 삽입
-	 * insertCart
-	 * */
-	
-	/**
-	 * 장바구니 상품 수정
-	 * updateCart
-	 * */
-		
-	/**
-	 * 장바구니 상품 삭제
-	 * deleteCart
-	 * */
-	 
+
 	 <!-- Page level plugin JavaScript-->
   <script src="vendor/datatables/jquery.dataTables.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.js"></script>

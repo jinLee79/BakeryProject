@@ -45,9 +45,9 @@
 		  }
 		  $.ajax({
 			  type : "post",
-			  url : "IdCheck",
+			  url : "${pageContext.request.contextPath}/IdCheck",
 			  dataType: "text",
-			  //data:  "userId="+$(this).val(),
+			  data:  "userId="+$(this).val(),
 			  success : function(result){
 				 $("#idmsg").text(result);
 			  },
@@ -152,11 +152,8 @@
 <input type = "submit" value = "가입하기"/>
 <input type = "reset" value = "다시 입력"/>
 
-
-
       </div>
       <!-- /.col-lg-9 -->
-
     
    	<div class="w3-center w3-padding-32">
     
@@ -170,8 +167,6 @@
     <!-- /.container -->
   </footer>
 
-  
-  
 </body>
 
 </html>

@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -28,12 +27,12 @@ public class DispatcherServlet extends HttpServlet {
 																											throws ServletException, IOException {
 		String key = request.getParameter("key");
 		
-		if(key==null) key="list";  //list는 전체검색. command값이 없으면 default로 list.jsp로 이동
+		if(key==null) key="list";  //list는 전체검색. key값이 없으면 default로 list.jsp로 이동
 		
 		//검색, 수정, 등록
 		Controller controller = map.get(key);
 		
-		ModelAndView mv = controller.handleRequest(request, response);  //mv가 없었다면 각각의 if문에서 이 기능 다 써줘야 했을 것..
+		ModelAndView mv = controller.handleRequest(request, response); 
 		if(mv.isRedirect()) {  //reDirect로 이동
 			response.sendRedirect(mv.getPath());
 		}else { //forward로 이동
