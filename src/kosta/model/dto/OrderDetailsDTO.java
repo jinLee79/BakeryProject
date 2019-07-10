@@ -4,15 +4,13 @@ public class OrderDetailsDTO {
 	private int orderNo;
 	private String productCode; 
 	private int quantity;
-	private int sellPrice;
 	
 	public OrderDetailsDTO() {}
 	
-	public OrderDetailsDTO(int orderNo, String productCode, int quantity, int sellPrice) {
+	public OrderDetailsDTO(int orderNo, String productCode, int quantity) {
 		this.orderNo = orderNo;
 		this.productCode = productCode;
 		this.quantity = quantity;
-		this.sellPrice = sellPrice;
 	}
 
 	public int getOrderNo() {
@@ -32,12 +30,6 @@ public class OrderDetailsDTO {
 	}
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
-	}
-	public int getSellPrice() {
-		return sellPrice;
-	}
-	public void setSellPrice(int sellPrice) {
-		this.sellPrice = sellPrice;
 	}
 
 

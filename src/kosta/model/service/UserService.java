@@ -18,8 +18,7 @@ public class UserService {
 	 * int confirmId(String userId)
 	 * */
 	 public static int confirmId(String userId) throws SQLException {
-		 int result =userDAO.confirmId(userId);
-		 return result;
+		 return userDAO.confirmId(userId);
 	 }
 	
 	/**

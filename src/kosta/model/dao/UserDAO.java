@@ -42,7 +42,7 @@ public interface UserDAO {
 	 * 회원 탈퇴
 	 * delete from users where userid=? and userpwd=?
 	 * */
-	 int deleteMyInfo(String userId)  throws SQLException;
+	 int deleteMyInfo(String userId, String userPwd)  throws SQLException;
 	 
 	 
 	/////**이하 관리자기능**/////////////////////////////////////
