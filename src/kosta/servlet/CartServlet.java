@@ -20,7 +20,7 @@ import kosta.model.dto.ProductDTO;
 public class CartServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+	protected void service(HttpServletRequest request, HttpServletResponse response) 
 																													throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
@@ -44,7 +44,7 @@ public class CartServlet extends HttpServlet {
 		//세션에 리스트를 추가
 		session.setAttribute("list", cart);
 		
-		//페이지 출력                           
+		//페이지 출력 -> 장바구니페이지로가고                           
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		

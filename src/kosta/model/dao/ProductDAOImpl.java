@@ -35,16 +35,47 @@ public class ProductDAOImpl implements ProductDAO
 						rs.getString("description"), rs.getString("fName"));
 				list.add(dto);
 			}
-			return list;
+
 		}
 		finally
 		{
 			DbUtil.dbClose(rs, ps, con);
 		}
+		return list;
 	}
 
 	@Override
-	public List<ProductDTO> searchByKeyword(String keyWord) throws SQLException
+	public ProductDTO srchByProductCode(String productCode) throws SQLException
+	{
+		ProductDTO productDTO = null;
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "select * from product where productcode=?";
+		try		{
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, productCode);
+			rs = ps.executeQuery();
+			
+			while(rs.next())	{
+				productDTO = new ProductDTO(rs.getString("productCode"),
+						rs.getString("productName"), rs.getInt("sellPrice"),
+						rs.getString("description"), rs.getString("fName"));
+			}
+			
+		}		
+	     finally
+		{
+			DbUtil.dbClose(rs, ps, con);
+		}
+		return productDTO;
+	}
+	
+	
+	@Override
+	public List<ProductDTO> srchByKeyword(String keyWord) throws SQLException
 	{
 		List<ProductDTO> list = null;
 		
@@ -66,12 +97,13 @@ public class ProductDAOImpl implements ProductDAO
 						rs.getString("description"), rs.getString("fName"));
 				list.add(dto);
 			}
-			return list;
+	
 		}
 		finally
 		{
 			DbUtil.dbClose(rs, ps, con);
 		}
+		return list;
 	}
 
 	@Override
@@ -99,12 +131,13 @@ public class ProductDAOImpl implements ProductDAO
 				list.add(dto);
 			}
 			
-			return list;
+	
 		}
 		finally
 		{
 			DbUtil.dbClose(rs, ps, con);
 		}
+		return list;
 	}
 
 	@Override
@@ -126,12 +159,13 @@ public class ProductDAOImpl implements ProductDAO
 			ps.setString(5, productDTO.getfName());
 			
 			rs = ps.executeUpdate();
-			return rs;
+		
 		}
 		finally
 		{
 			DbUtil.dbClose(ps, con);
 		}
+		return rs;
 	}
 
 	@Override
@@ -153,12 +187,13 @@ public class ProductDAOImpl implements ProductDAO
 			ps.setString(5, productDTO.getProductCode());
 			
 			rs = ps.executeUpdate();
-			return rs;
+
 		}
 		finally
 		{
 			DbUtil.dbClose(ps, con);
 		}
+		return rs;
 	}
 
 	@Override
@@ -175,11 +210,12 @@ public class ProductDAOImpl implements ProductDAO
 			ps = con.prepareStatement(sql);
 			ps.setString(1, productCode);			
 			rs = ps.executeUpdate();
-			return rs;
+
 		}
 		finally
 		{
 			DbUtil.dbClose(ps, con);
 		}
+		return rs;
 	}
 }

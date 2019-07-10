@@ -13,12 +13,21 @@ public interface ProductDAO {
 	 * select * from product order by productcode
 	 * */
 	List<ProductDTO> selectAllProduct() throws SQLException;
+	
+	/**
+	 * 상품코드로 상품 검색
+	 * ProductDTO srchByProductCode(String productCode)
+	 * select * from product where productcode=?
+	 * */
+	ProductDTO srchByProductCode(String productCode) throws SQLException;
+	
+	
 	/**
 	 * 상품이름 키워드로 상품 검색(회원, 비회원, 관리자 모두 가능)
 	 * List<ProductDTO> searchByKeyword(String keyWord)
 	 * select * from product where productname like ?
 	 * */
-	List<ProductDTO> searchByKeyword(String keyWord) throws SQLException;
+	List<ProductDTO> srchByKeyword(String keyWord) throws SQLException;
 	
 	/**
 	 * 상품 정렬 (이름/높은가격순/낮은가격순/조회수)

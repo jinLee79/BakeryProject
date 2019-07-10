@@ -1,6 +1,14 @@
 package kosta.model.service;
 
-public interface ProductService {
+import java.sql.SQLException;
+
+import kosta.model.dao.ProductDAO;
+import kosta.model.dao.ProductDAOImpl;
+import kosta.model.dto.ProductDTO;
+
+public class ProductService {
+	
+	static ProductDAO productDAO = new ProductDAOImpl();
 
 	/**
 	 * 상품 전체검색(메인페이지에 띄우기) 
@@ -9,8 +17,19 @@ public interface ProductService {
 	 * */
 	
 	/**
+	 * 상품코드로 상품 검색
+	 * */
+	public static ProductDTO srchByProductCode(String productCode) throws SQLException{
+		ProductDTO productDTO = productDAO.srchByProductCode(productCode);
+		if(productDTO==null) {
+			throw new SQLException(productCode+"번에 해당하는 제품이 없습니다.");
+		}
+		return productDTO;
+	}
+	
+	/**
 	 * 상품이름 키워드로 상품 검색(회원, 비회원, 관리자 모두 가능)
-	 * ProductDTO searchByKeyword(String keyWord)
+	 * ProductDTO srchByKeyword(String keyWord)
 	 * select * from product where productname like ?
 	 * */
 	
@@ -20,10 +39,5 @@ public interface ProductService {
 	 * select * from product order by ?
 	 * */
 	
-	/**
-	 * 조회수 증가
-	 * ProductDTO incrementByReadnum(String productCode, boolean flag)
-	 * update product set readnum = readnum + 1 where productcode=?
-	 * */
 
 }
