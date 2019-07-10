@@ -4,9 +4,12 @@ import java.sql.SQLException;
 
 import kosta.model.dao.UserDAO;
 import kosta.model.dao.UserDAOImpl;
+import kosta.model.dto.UserDTO;
 
 public class UserService {
-	static UserDAO userDAO = new UserDAOImpl();
+	//private static UserDTO UserDTO = null;
+	private static UserDAO userDAO  = new UserDAOImpl();
+	
 
 	/**
 	 * 등록(회원가입 폼에서)
@@ -23,9 +26,14 @@ public class UserService {
 	
 	/**
 	 * 로그인 기능: 
-	 * boolean loginCheck(String userId, String userPwd)
+	 * UserDTO  loginCheck(String userId, String userPwd)
 	 * */
-	
+
+		public static UserDTO loginCheck(String userId, String userPwd) throws SQLException {
+			UserDTO userDto =userDAO.loginCheck(userId, userPwd);
+			if(userDto ==null) throw new SQLException("정보를 확인해주세요.");
+			return userDto ;
+		}
 	/**
 	 * 회원이 회원정보 보기
 	 * UserDTO viewMyInfo(String userId)

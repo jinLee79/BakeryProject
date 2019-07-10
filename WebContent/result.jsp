@@ -39,7 +39,7 @@
     <div class="container">
     <span  style = "color : white; font-size: 14px; font-family: 'Jeju Hallasan',cursive; ">27년 변하지 않는 전통과 정성으로...</span>
 
-      <a class="navbar-brand" href="#" id = "topLogo">효모네 빵집</a>
+      <a class="navbar-brand" href="index.jsp" id = "topLogo">효모네 빵집</a>
       
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
