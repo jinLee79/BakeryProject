@@ -1,16 +1,26 @@
 package kosta.model.service;
 
-public interface UserService {
+import java.sql.SQLException;
+
+import kosta.model.dao.UserDAO;
+import kosta.model.dao.UserDAOImpl;
+
+public class UserService {
+	static UserDAO userDAO = new UserDAOImpl();
 
 	/**
 	 * 등록(회원가입 폼에서)
-	 * int signUp(UserDTO userDTO)
+	 * static int signUp(UserDTO userDTO)
 	 * */
 	
 	/**
 	 * 회원가입시 아이디 중복 체크
 	 * int confirmId(String userId)
 	 * */
+	 public static int confirmId(String userId) throws SQLException {
+		 int result =userDAO.confirmId(userId);
+		 return result;
+	 }
 	
 	/**
 	 * 로그인 기능: 
