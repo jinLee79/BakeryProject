@@ -47,13 +47,20 @@
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">제품 소개
+        <li class="nav-item">
+            <a class="nav-link" href="menuList.jsp">제품 소개
               <span class="sr-only">(current)</span>
             </a>
           </li>
+          
+           <li class="nav-item active">
+            <a class="nav-link" href="cart.jsp">장바구니
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          
           <li class="nav-item">
-            <a class="nav-link" href="#">찾아오시는 길</a>
+            <a class="nav-link" href="location.jsp">찾아오시는 길</a>
           </li>
         </ul>
       </div>

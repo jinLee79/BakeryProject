@@ -36,7 +36,8 @@
 
  	          <input type = "password" style="min-width:210px; min-height:30px" class = "password" name="pwd" value = "비밀번호"/>
 
- 			  <button style="min-width:210px; min-height:30px" class = "btn btn-info btn-rm" >로그인</button>
+ 			  <button style="min-width:103px; min-height:30px" class = "btn btn-info btn-rm" >로그인</button>
+ 			  <input type = "button" style="min-width:103px; min-height:30px" class = "btn btn-info btn-rm" onclick="location.href='signUp.jsp'" value = "회원가입">
  	        </form>
  	        <%
  		}  else{//세션에 id있을때

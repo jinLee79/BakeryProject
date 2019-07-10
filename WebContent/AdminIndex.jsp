@@ -1,4 +1,4 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -50,13 +50,13 @@
       
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-           <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="AdminPduct.jsp">상품 관리
               <span class="sr-only">(current)</span>
             </a>
           </li>
           
-          <li class="nav-item">
+           <li class="nav-item">
             <a class="nav-link" href="AdminOrder.jsp">주문 관리
               <span class="sr-only">(current)</span>
             </a>
@@ -236,36 +236,3 @@
   
 </body>
 </html>
-
-
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<h1> 관리자가 주문관리를 하는 페이지 입니다.<br>
-쇼핑몰 전체의 주문 목록을 보고 주문상태를 수정하는 페이지입니다.<br>
-주문상세내역을 볼 수 있습니다.
-</h1>
-<h3> 관리자의 메인페이지에서 iframe으로 넣어도 괜찮을 듯요</h3>
-</body>
-</html>-->
-
-
-
-<!-- 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<h1> 관리자가 상품을 등록, 수정, 삭제하는 상품관리 페이지입니다. </h1>
-</body>
-</html>
-
- -->
