@@ -28,6 +28,29 @@
      body > nav > div > a {display:block; margin-left: 40%;}
   </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+ $(function(){
+	 alert(${productDTO.productCode});
+/* 	 read();
+	 
+	$("#insertcart").click(function(){
+		location.href="Cart?productCode="+${productDTO.productCode};
+	}); */
+});
+
+ function read(){
+	 $("#productCode").val(${productDTO.productCode});
+	 $("#productName").val(${productDTO.productName});
+	 $("#sellPrice").val(${productDTO.sellPrice});
+	 $("#description").val(${productDTO.description});
+	 $("#fname").attr("src=${productDTO.fname}");
+ }
+ 	
+</script>
+
+
+
 </head>
 
 <body>
@@ -95,13 +118,14 @@
 <div class="col-lg-9">
 
 <div class="card mt-4">
-<img class="card-img-top img-fluid" src="http://placehold.it/900x400" alt="">
+<img class="card-img-top img-fluid"  id="fName">
 <div class="card-body">
-<h3 class="card-title" >Product Name</h3>
-<h4>$24.99</h4>
-<p class="card-text">Loremoiure, ducimus!</p>
-<input type = button class = "btn btn-info"  id="cart"  value = "장바구니 담기"  onclick="location.href='${pageContext.request.contextPath}/Cart'">
-<input type = button class = "btn btn-info" value = "이전 페이지로"  onclick="location.href='index.jsp'">
+<h3 class="card-title"  id="productName"></h3>
+<h4 id="productCode"></h4>
+<h4 id="sellPrice"></h4>
+<p class="card-text"  id="description"></p>
+<input type = button class = "btn btn-info"  id="insertcart" value = "장바구니 담기" >
+<input type = button class = "btn btn-info"  value = "이전 페이지로"  onclick="location.href='index.jsp'">
 
 </div>
 </div>
