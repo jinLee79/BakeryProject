@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import kosta.model.dto.ProductDTO;
@@ -15,7 +16,7 @@ public class ProductDAOImpl implements ProductDAO
 	@Override
 	public List<ProductDTO> selectAllProduct() throws SQLException
 	{
-		List<ProductDTO> list = null;
+		List<ProductDTO> list = new ArrayList<>();
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -30,18 +31,22 @@ public class ProductDAOImpl implements ProductDAO
 			
 			while(rs.next())
 			{
-				ProductDTO dto = new ProductDTO(rs.getString("productCode"),
-						rs.getString("productName"), rs.getInt("sellPrice"),
-						rs.getString("description"), rs.getString("fName"));
+				ProductDTO dto = new ProductDTO(rs.getString("PRODUCTCODE"),
+						rs.getString("PRODUCTNAME"), rs.getInt("SELLPRICE"),
+						rs.getString("DESCRIPTION"), rs.getString("FNAME"));
+				System.out.println(rs.getString("PRODUCTCODE"));
+				System.out.println(rs.getString("PRODUCTNAME"));
+				System.out.println(rs.getString("SELLPRICE"));
+				System.out.println(rs.getString("DESCRIPTION"));
+				System.out.println(rs.getString("FNAME"));
 				list.add(dto);
 			}
-
+			return list;
 		}
 		finally
 		{
 			DbUtil.dbClose(rs, ps, con);
 		}
-		return list;
 	}
 
 	@Override
@@ -77,7 +82,7 @@ public class ProductDAOImpl implements ProductDAO
 	@Override
 	public List<ProductDTO> srchByKeyword(String keyWord) throws SQLException
 	{
-		List<ProductDTO> list = null;
+		List<ProductDTO> list = new ArrayList<>();
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -109,7 +114,7 @@ public class ProductDAOImpl implements ProductDAO
 	@Override
 	public List<ProductDTO> sort(String keyField) throws SQLException
 	{
-		List<ProductDTO> list = null;
+		List<ProductDTO> list = new ArrayList<>();
 		
 		Connection con = null;
 		PreparedStatement ps = null;

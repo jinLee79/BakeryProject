@@ -1,6 +1,7 @@
 package kosta.model.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import kosta.model.dao.ProductDAO;
 import kosta.model.dao.ProductDAOImpl;
@@ -15,6 +16,11 @@ public class ProductService {
 	 * List<ProductDTO> selectAllProduct()
 	 * select * from product order by productcode
 	 * */
+	public static List<ProductDTO> selectAllProduct() throws SQLException
+	{
+		List<ProductDTO> list = productDAO.selectAllProduct();
+		return list;
+	}
 	
 	/**
 	 * 상품코드로 상품 검색

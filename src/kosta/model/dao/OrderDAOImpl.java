@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import kosta.model.dto.OrderDTO;
@@ -43,7 +44,7 @@ public class OrderDAOImpl implements OrderDAO
 	@Override
 	public List<OrderDTO> viewMyOrder(String userId) throws SQLException
 	{
-		List<OrderDTO> list = null;
+		List<OrderDTO> list = new ArrayList<>();
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -99,7 +100,7 @@ public class OrderDAOImpl implements OrderDAO
 	@Override
 	public List<OrderDTO> selectAllOrder() throws SQLException
 	{
-		List<OrderDTO> list = null;
+		List<OrderDTO> list = new ArrayList<>();
 		
 		Connection con = null;
 		PreparedStatement ps = null;
