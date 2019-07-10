@@ -23,7 +23,7 @@ public interface UserDAO {
 	 * 로그인 기능: 
 	 * select * from users where userid=? and userpwd=?
 	 * */
-	 boolean loginCheck(String userId, String userPwd) throws SQLException;
+	 UserDTO loginCheck(String userId, String userPwd) throws SQLException;
 	
 	/**
 	 * 회원이 회원정보 보기

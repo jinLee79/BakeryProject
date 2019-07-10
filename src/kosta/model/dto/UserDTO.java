@@ -1,5 +1,6 @@
 package kosta.model.dto;
 
+
 public class UserDTO {
 	private String userId;
 	private String userPwd;
@@ -8,10 +9,12 @@ public class UserDTO {
 	private String phone;
 	private int point;
 	private String grade;
+	
+	
 
 	public UserDTO() {	}
 	
-	public UserDTO(String userId, String userPwd, String userName, int age, String phone, int point, String grade) {
+	public UserDTO(String userId, String userPwd, String userName, int age, String phone,  String grade, int point) {
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.userName = userName;

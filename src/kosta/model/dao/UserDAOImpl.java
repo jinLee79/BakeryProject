@@ -1,5 +1,6 @@
 package kosta.model.dao;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -56,10 +57,36 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	@Override
-	public boolean loginCheck(String userId, String userPwd) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+	public UserDTO loginCheck(String userId, String userPwd) throws SQLException {
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		UserDTO dto = null;
+		String sql = "select * from users where userid=? and userpwd=?";
+		
+		try {
+			System.out.println("userid = " + userId);
+			System.out.println("userPwd = " + userPwd);
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			ps.setString(1, userId);
+			ps.setString(2, userPwd);
+			rs = ps.executeQuery();
+			
+		
+			if(rs.next()) {
+				dto = new UserDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5), rs.getString(6), rs.getInt(7));
+			}
+
+		}
+		finally {
+			DbUtil.dbClose(rs, ps, con);
+		}
+		
+		return dto;
 	}
+	
 	
 	//회원이 회원정보 보기
 	@Override
@@ -77,7 +104,7 @@ public class UserDAOImpl implements UserDAO {
 			while(rs.next()) {
 				userDTO = new UserDTO(rs.getString("userid"), rs.getString("userpwd"),
 						 rs.getString("username"), rs.getInt("age"),
-						 rs.getString("phone"),  rs.getInt("point"), rs.getString("grade"));
+						 rs.getString("phone"), rs.getString("grade"), rs.getInt("point"));
 			}
 		} finally {
 			DbUtil.dbClose(rs, ps, con);
@@ -101,7 +128,7 @@ public class UserDAOImpl implements UserDAO {
 			ps.setInt(3,  userDTO.getAge());
 			ps.setString(4,  userDTO.getPhone());
 			ps.setString(5,  userDTO.getUserId());
-			ps.setString(5,  userDTO.getUserPwd());
+			ps.setString(6,  userDTO.getUserPwd());
 			result = ps.executeUpdate();
 		} finally {
 			DbUtil.dbClose(ps, con);
