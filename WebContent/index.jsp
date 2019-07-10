@@ -29,8 +29,16 @@
   </style>
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
 
+sessionStorage.setItem("check", false);
 
+if(!sessionStorage.getItem("check"))
+{
+	
+}
+
+</script>
 </head>
 <body>
   <!-- Navigation -->
@@ -43,7 +51,11 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      
 
+
+
+      
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -80,7 +92,10 @@
           <input type = "password" style="min-width:210px; min-height:30px" class = "password" value = "비밀번호"/>
 
 		  <button style="min-width:210px; min-height:30px" class = "btn btn-info btn-rm">로그인</button>
-        </form>
+        </form><br><br>
+        <video width="210" height="150" autoplay muted controls>
+              <source src="video/breadmaking.mp4" type="video/mp4">
+         </video>
         </div>
       </div>
       <!-- /.col-lg-3 -->
@@ -118,8 +133,8 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
+              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item One</a>
                 </h4>
@@ -134,8 +149,8 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
+              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Two</a>
                 </h4>
@@ -150,8 +165,8 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
+              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Three</a>
                 </h4>
@@ -166,8 +181,8 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
+              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Four</a>
                 </h4>
@@ -182,8 +197,8 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
+              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Five</a>
                 </h4>
@@ -198,8 +213,8 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-              <div class="card-body">
+              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Six</a>
                 </h4>
@@ -225,23 +240,9 @@
     <!-- /.container -->
     
    	<div class="w3-center w3-padding-32">
-      <!-- 검색영역 -->
-			<form name="srch" method="get" action="/product/result.asp" onsubmit="return srchCheck(srch);">
-			<input type = "text" class = "text" name = "searchTextbox">&nbsp;&nbsp;<a href="#" id="btnSearch"><img src="img/btn_search1.png" class="btn_search" title="검색" alt="검색" /></a>
-			</form>
-	  <!-- //검색영역 -->
 	</div>
 
-	<div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-    </div>
-  </div>
+
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
