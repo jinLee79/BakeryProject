@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
 
   <meta charset="utf-8">
@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>회원정보</title>
+  <title>Shop Homepage - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,18 +21,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
 
 <style>
-   @import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+	@import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
      body{background-color: #f7f0da;}
      #topLogo{font-family: 'Jeju Hallasan',cursive; font-size : 30px; vertical-align: middle;}
      nav div div a{font-family: 'Jeju Hallasan',cursive;}
      body > nav > div > a { margin-left: 20%;}
-     h1,table{font-family: 'Jeju Hallasan',cursive;}
-     table input[type = text], table input[type=password]{height: 22px;}
-     select{height: 22px}
   </style>
 
+<script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+</script>
 </head>
-
 <body>
   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d4633">
@@ -93,82 +92,55 @@
 
         <h1 class="my-4"><img class = "img img-fluid"  src = "img/hyomo2.png"></h1>
         <div class="list-group">
-  		<%@ 
+          <%@ 
                     include file = "loginForm.jsp"
         %>
-		</div>
+        <video width="210" height="150" autoplay muted controls>
+              <source src="video/breadmaking.mp4" type="video/mp4">
+         </video>
+        </div>
       </div>
       <!-- /.col-lg-3 -->
-    <div class="col-lg-9">
-    
- <br>
-        
-        
-        <form method="post" action="MainForm.jsp?contentPage=member/pro/ModifyPro.jsp" 
-                name="userInfo" onsubmit="return checkValue()">
-                
-            <table align="center" >
-               <h1 align="center">회원정보</h1>
-                <tr>
-                    <td id="title">아이디</td>
-                   <td> <input type = "text" readonly/> </td>
-                </tr>
-                <tr>
-                    <td id="title">비밀번호</td>
-                    <td>
-                        <input type="password" name="password" maxlength="50" 
-                            value="">
-                    </td>
-                </tr>
-        
-                <tr>
-                    <td id="title">이름</td>
-                    <td> <input type = "text"/> </td>
-                </tr>
-                
-                <tr>
-                    <td id="title">나이</td>
-                    <td> <input type = "text"/> </td>
-                </tr>
-                    
-                <tr>
-                    <td id="title">휴대전화</td>
-                    <td> 
-                   <select>
-                    <option> 010 </option>
-                    <option> 011 </option>
-                    <option> 016 </option>
-                    <option> 018 </option>
-                   </select> 
-                   <input type = "text" size = "6"/> - <input type = "text" size = "6"/>
-                </td>
-                </tr>
-              
-              <tr align="center">
-                 <td colspan ="2"><input type="submit" value="수정하기"/>
-               <input type="button" value="메인으로"></td>
-              </tr>
-              
-            </table>
-            
-             
-        </form>
 
+      <div class="col-lg-9">
+
+		<br><br>
+        <div class="row">
+		<%
+		%>
+		
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <div class="card-body" style = "background-color: #CCCCCC">
+                <h4 class="card-title">
+                  <a href="#">Item One</a>
+                </h4>
+                <h5>$24.99</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+              </div>
+              
+            </div>
+          </div>
+
+        <!-- /.row -->
+		
+
+     
       </div>
       <!-- /.col-lg-9 -->
 
     </div>
     <!-- /.row -->
 
-   </div>
+	</div>
     <!-- /.container -->
     
-      <div class="w3-center w3-padding-32">
-    
-  </div>
+
+
 
   <!-- Footer -->
-  <footer class="py-5 bg-dark" >
+  <footer class="py-5 bg-dark">
     <div class="container">
       <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
     </div>
@@ -180,5 +152,4 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   
 </body>
-
 </html>

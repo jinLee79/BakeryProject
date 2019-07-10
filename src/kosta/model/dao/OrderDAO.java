@@ -1,5 +1,10 @@
 package kosta.model.dao;
 
+import java.sql.SQLException;
+import java.util.List;
+
+import kosta.model.dto.OrderDTO;
+
 public interface OrderDAO {
 	
 	/**
@@ -7,19 +12,22 @@ public interface OrderDAO {
 	 * int insertOrder(OrderDTO orderDTO)
 	 * insert into orders values()
 	 * */
+	int insertOrder(OrderDTO orderDTO) throws SQLException;
 	
 	/**
 	 * 개별 회원이 자신의 주문목록 보기
 	 * OrderDTO viewMyOrder(String userId)
 	 * select * from orders where userid=?
 	 * */
+	List<OrderDTO> viewMyOrder(String userId) throws SQLException;
+	
 	
 	/**
 	 * 주문목록에서 주문 취소
 	 * int cancelMyOrder(String userId)
 	 * delete from orders where userid=?
 	 * */
-	
+	int cancelMyOrder(String userId) throws SQLException;
 	
 	/////**이하 관리자기능**/////////////////////////////////////
 
@@ -28,12 +36,12 @@ public interface OrderDAO {
 	 * List<OrderDTO> selectAllOrder()
 	 * select * from orders order by orderno
 	 * */
-	
+	List<OrderDTO> selectAllOrder() throws SQLException;
 	/**
 	 * 주문 상태값 변경
 	 * int updateOrderState(OrderDTO orderDTO)
 	 * update orders set orderstate=? where orderno=?
 	 * */
-
+	int updateOrderState(OrderDTO orderDTO) throws SQLException;
 	
 }
