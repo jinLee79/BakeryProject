@@ -22,9 +22,7 @@ public class OrderDetailImpl implements OrderDetailDAO
 		try
 		{
 			con = DbUtil.getConnection();
-			ps = con.prepareStatement(sql);
-			
-			
+			ps = con.prepareStatement(sql);	
 			rs = ps.executeUpdate();
 			return rs;
 		}

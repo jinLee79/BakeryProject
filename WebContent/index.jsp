@@ -30,14 +30,6 @@
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-
-sessionStorage.setItem("check", false);
-
-if(!sessionStorage.getItem("check"))
-{
-	
-}
-
 </script>
 </head>
 <body>
@@ -63,9 +55,23 @@ if(!sessionStorage.getItem("check"))
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">상품 주문</a>
-          </li>
+          <%
+          try{
+             if(session.getAttribute("id").equals("admin")){
+             %>
+               <li class="nav-item">
+                     <a class="nav-link" href="#">상품 관리</a>
+                 </li>
+             <%
+             }
+          }catch(Exception e){
+             %>
+             <li class="nav-item">
+                 <a class="nav-link" href="#">상품 주문</a>
+              </li>
+          <%
+          }
+          %>
           <li class="nav-item">
             <a class="nav-link" href="#">찾아오시는 길</a>
           </li>
@@ -86,13 +92,9 @@ if(!sessionStorage.getItem("check"))
 
         <h1 class="my-4"><img class = "img img-fluid"  src = "img/hyomo2.png"></h1>
         <div class="list-group">
-        <form action="Login" method="post">
-          <input type = "text" style="min-width:210px; min-height:30px" class = "text" value = "아이디"/>
-
-          <input type = "password" style="min-width:210px; min-height:30px" class = "password" value = "비밀번호"/>
-
-		  <button style="min-width:210px; min-height:30px" class = "btn btn-info btn-rm">로그인</button>
-        </form><br><br>
+        <%@ 
+                    include file = "loginForm.jsp"
+        %>
         <video width="210" height="150" autoplay muted controls>
               <source src="video/breadmaking.mp4" type="video/mp4">
          </video>
@@ -133,7 +135,7 @@ if(!sessionStorage.getItem("check"))
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item One</a>
@@ -141,15 +143,13 @@ if(!sessionStorage.getItem("check"))
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
+              
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Two</a>
@@ -157,15 +157,13 @@ if(!sessionStorage.getItem("check"))
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
+              
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Three</a>
@@ -173,15 +171,13 @@ if(!sessionStorage.getItem("check"))
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
+              
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Four</a>
@@ -189,15 +185,13 @@ if(!sessionStorage.getItem("check"))
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
+              
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Five</a>
@@ -205,42 +199,36 @@ if(!sessionStorage.getItem("check"))
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
               </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
+              
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Six</a>
                 </h4>
                 <h5>$24.99</h5>
                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              <div class="card-footer">
-                <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
-              </div>
             </div>
           </div>
-
         </div>
-        <!-- /.row -->
-
+                
       </div>
+        <!-- /.row -->
+        <div style = "width: 100%" align = "center">
+			<button type = "button" class = "btn btn-success" onclick = "location.href = 'menuList.jsp'">더보기</button>        
+        </div>
+        <br>
+        </div>
       <!-- /.col-lg-9 -->
-
     </div>
     <!-- /.row -->
-
 	</div>
     <!-- /.container -->
     
-   	<div class="w3-center w3-padding-32">
-	</div>
 
 
 

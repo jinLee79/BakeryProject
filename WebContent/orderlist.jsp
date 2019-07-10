@@ -56,9 +56,23 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">상품 주문</a>
-          </li>
+           <%
+          try{
+             if(session.getAttribute("id").equals("admin")){
+             %>
+               <li class="nav-item">
+                     <a class="nav-link" href="#">상품 관리</a>
+                 </li>
+             <%
+             }
+          }catch(Exception e){
+             %>
+             <li class="nav-item">
+                 <a class="nav-link" href="#">상품 주문</a>
+              </li>
+          <%
+          }
+          %>
           <li class="nav-item">
             <a class="nav-link" href="#">찾아오시는 길</a>
           </li>
@@ -79,6 +93,9 @@
 
         		<h1 class="my-4"><img class = "img img-fluid"  src = "img/hyomo2.png"></h1>
         		<div class="list-group">
+        			<%@ 
+                	    include file = "loginForm.jsp"
+       				 %>
 				</div>
 			</div>
       <!-- /.col-lg-3 -->

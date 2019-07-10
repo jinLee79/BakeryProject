@@ -56,9 +56,23 @@
               <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">상품 주문</a>
-          </li>
+           <%
+          try{
+             if(session.getAttribute("id").equals("admin")){
+             %>
+               <li class="nav-item">
+                     <a class="nav-link" href="#">상품 관리</a>
+                 </li>
+             <%
+             }
+          }catch(Exception e){
+             %>
+             <li class="nav-item">
+                 <a class="nav-link" href="#">상품 주문</a>
+              </li>
+          <%
+          }
+          %>
           <li class="nav-item">
             <a class="nav-link" href="#">찾아오시는 길</a>
           </li>
@@ -79,11 +93,9 @@
 
         <h1 class="my-4"><img class = "img img-fluid"  src = "img/hyomo2.png"></h1>
         <div class="list-group">
-          <input type = "text" style="min-width:210px; min-height:30px" class = "text" value = "아이디"/>
-
-          <input type = "password" style="min-width:210px; min-height:30px" class = "password" value = "비밀번호"/>
-
-		  <button type = "button" style="min-width:210px; min-height:30px" class = "btn btn-info btn-rm">로그인</button>
+        <%@ 
+                	    include file = "loginForm.jsp"
+       	%>
         </div>
       </div>
       <!-- /.col-lg-3 -->
