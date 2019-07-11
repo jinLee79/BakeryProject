@@ -134,8 +134,8 @@
                 </tr>
                 
                 <tr>
-                    <td id="title" style="width: 35%;" align="right" name="img">이미지명</td>
-                    <td> <input type = "text"  name="img"/> </td>
+                    <td id="title" style="width: 35%;" align="right" name="img">이미지</td>
+                    <td> <input type="file" name="file" maxlength="60" size="40"> </td>
                 </tr>
                 
               
