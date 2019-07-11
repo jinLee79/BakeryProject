@@ -87,36 +87,35 @@
  <br>
         
         
-        <form method="post" action="MainForm.jsp?contentPage=member/pro/ModifyPro.jsp" 
+        <form method="post" action="front" 
                 name="userInfo" onsubmit="return checkValue()">
                 
             <table align="center" style="width: 500px; height: 300px;">
                <h1 align="center">회원정보</h1>
                 <tr align="center">
-                    <td id="title" style="width: 35%;" align="right">아이디</td>
-                   <td align="left"> <input type = "text" readonly/> </td>
+                    <td id="title" style="width: 35%;" align="right" >아이디</td>
+                   <td align="left"> <input type = "text"  readonly/> </td>
                 </tr>
                 <tr>
-                    <td id="title" style="width: 35%;" align="right">비밀번호</td>
+                    <td id="title" style="width: 35%;" align="right" >비밀번호</td>
                     <td>
-                        <input type="password" name="password" maxlength="50" 
-                            value="">
+                        <input type="password" name="password" maxlength="50" name="userpwd">
                     </td>
                 </tr>
         
                 <tr>
                     <td id="title" style="width: 35%;" align="right">이름</td>
-                    <td> <input type = "text"/> </td>
+                    <td> <input type = "text"  name="username"/> </td>
                 </tr>
                 
                 <tr>
-                    <td id="title" style="width: 35%;" align="right">나이</td>
-                    <td> <input type = "text"/> </td>
+                    <td id="title" style="width: 35%;" align="right" name="userpwd">나이</td>
+                    <td> <input type = "text"  name="age"/> </td>
                 </tr>
                     
                 <tr>
-                    <td id="title" style="width: 35%;" align="right">휴대전화</td>
-                    <td> 
+                    <td id="title" style="width: 35%;" align="right" >휴대전화</td>
+                    <td name="phone"> 
                    <select>
                     <option> 010 </option>
                     <option> 011 </option>
