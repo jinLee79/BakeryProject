@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import kosta.model.dto.UserDTO;
@@ -154,17 +155,38 @@ public class UserDAOImpl implements UserDAO {
 		return result;
 	}
 	
-	/////**이하 관리자기능**/////////////////////////////////////
+/////**이하 관리자기능**/////////////////////////////////////
 	/**
 	 * 회원 전체 목록 검색
 	 *  select * from users order by userid
 	 * */
 	@Override
 	public List<UserDTO> searchAllUsers() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		List<UserDTO> list = new ArrayList<>();
+		
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String sql = "select * from users";
+		
+		try
+		{
+			con = DbUtil.getConnection();
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			
+			while(rs.next())
+			{
+				UserDTO dto = new UserDTO(rs.getString("userId"),rs.getString("userPwd"), rs.getString("userName"),
+						rs.getInt("age"), rs.getString("phone"), rs.getString("grade"), rs.getInt("point"));
+				
+				list.add(dto);
+			}
+			return list;
+		}
+		finally
+		{
+			DbUtil.dbClose(rs, ps, con);
+		}
 	}
-
-
-
 }

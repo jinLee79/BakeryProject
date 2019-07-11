@@ -59,15 +59,18 @@ public class UserService {
 	 * int deleteMyInfo(String userId)
 	 * */
 
-	/////**이하 관리자기능**/////////////////////////////////////
-	/**
-	 * 회원 전체 목록 검색
-	 *  List<UserDTO> searchAllUsers()
-	 * */
-	
-	/**
-	 * 주문금액에 따른 회원 등급 승급(회원정보 수정)
-	 * int updateGrade(String userId, int orderTotal)
-	 * */
-	
+		/////**이하 관리자기능**/////////////////////////////////////
+		/**
+		 * 회원 전체 목록 검색
+		 *  List<UserDTO> searchAllUsers()
+		 * */
+			public static List<UserDTO> searchAllUsers()throws SQLException {
+				List<UserDTO> list = userDAO.searchAllUsers();
+				return list;
+			}
+		
+		/**
+		 * 주문금액에 따른 회원 등급 승급(회원정보 수정)
+		 * int updateGrade(String userId, int orderTotal)
+		 * */
 }
