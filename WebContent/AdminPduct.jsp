@@ -14,6 +14,9 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+     <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
@@ -30,6 +33,7 @@
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
+	
 </script>
 </head>
 <body>
@@ -43,7 +47,6 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
 
 
 
@@ -94,131 +97,122 @@
 
       <div class="col-lg-9">
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread3.jpg" alt="Third slide">
+<!-- DataTables Example -->
+		<br>
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            	상품 주문 목록</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead style = "text-align:center; vertical-align: middle">
+                  <tr>
+                    <th>이미지</th>
+                    <th>상품코드</th>
+                    <th>상품명</th>
+                    <th>단가</th>
+                    <th>설명</th>
+                    <th>삭제</th>
+                  </tr>
+                </thead>
+                <tfoot style = "text-align:center; vertical-align: middle">
+                  <tr>
+                    <th>이미지</th>
+                    <th>상품코드</th>
+                    <th>상품명</th>
+                    <th>단가</th>
+                    <th>설명</th>
+                    <th>삭제</th>
+                  </tr>
+                </tfoot>
+                <tbody style = "text-align:center; vertical-align: bottom;">
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A08</td>
+                    <td>단팥빵</td>
+                    <td>3</td>
+                    <td>3000</td>
+                    <td>9000</td>
+                  </tr>
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A06</td>
+                    <td>소보루</td>
+                    <td>2</td>
+                    <td>3500</td>
+                    <td>7000</td>
+                  </tr>
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A04</td>
+                    <td>소세지빵</td>
+                    <td>5</td>
+                    <td>2000</td>
+                    <td>10000</td>
+                  </tr>
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A02</td>
+                    <td>메론빵</td>
+                    <td>3</td>
+                    <td>7000</td>
+                    <td>21000</td>
+                  </tr>
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A01</td>
+                    <td>식빵</td>
+                    <td>1</td>
+                    <td>6000</td>
+                    <td>6000</td>
+                  </tr>
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A03</td>
+                    <td>고로께</td>
+                    <td>2</td>
+                    <td>8000</td>
+                    <td>16000</td>
+                  </tr>
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A07</td>
+                    <td>감자빵</td>
+                    <td>5</td>
+                    <td>9000</td>
+                    <td>45000</td>
+                  </tr>
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A05</td>
+                    <td>옥수수식빵</td>
+                    <td>1</td>
+                    <td>10000</td>
+                    <td>10000</td>
+                  </tr>
+                  <tr>
+                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
+                    <td>A09</td>
+                    <td>치즈계란빵</td>
+                    <td>8</td>
+                    <td>11000</td>
+                    <td>88000</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
             </div>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-          </div>
-        </div>
-                
       </div>
-        <!-- /.row -->
-        <div style = "width: 100%" align = "center">
-			<button type = "button" class = "btn btn-success" onclick = "location.href = 'menuList.jsp'">더보기</button>        
-        </div>
-        <br>
-        </div>
-      <!-- /.col-lg-9 -->
-    </div>
-    <!-- /.row -->
-	</div>
-    <!-- /.container -->
-    
+      <!-- /.container-fluid -->
+
+
+</div>
+
 
 
 
@@ -233,6 +227,20 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+   <!-- Page level plugin JavaScript-->
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  
+  
+  
+  
+  
+  
+  
+    <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
   
 </body>
 </html>
