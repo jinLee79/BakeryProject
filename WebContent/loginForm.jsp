@@ -44,7 +44,7 @@
  			
  		    <form action="front"  method="post">
  		     <input type = "hidden"  name="key" value = "login"/>
- 	          <input type = "text" style="min-width:210px; min-height:30px" class = "text"  name="id" value = "아이디"  onclick = "function(this){this.value = '';}"/>
+ 	          <input type = "text" style="min-width:210px; min-height:30px" class = "text"  name="id" value = "아이디"  />
 
  	          <input type = "password" style="min-width:210px; min-height:30px" class = "password" name="pwd" value = "비밀번호"/>
 
