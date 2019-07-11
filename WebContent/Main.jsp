@@ -31,28 +31,8 @@
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	var rand = new Array(6);
-    var max =<%=request.getAttribute("MaxIndex")%>;
-    
-    
-    for(var i = 1; i < 6; ++i)
-    {
-		rand[i - 1] = parseInt(Math.random() * max);
-		rand[i] = parseInt(Math.random() * max);	
-		
-		while(rand[i - 1] == rand[i])
-		{
-			rand[i] = parseInt(Math.random() * max);
-		}
-    }
-     	
-	var fNamelist = new Array(); 
-	for(var i = 0; i < <%=request.getAttribute("MaxIndex")%>; ++i)
-	{
-		fNamelist.push('${list[i].getfName()}');	
-	}
-	
 </script>
+
 </head>
 <body>
 
@@ -116,19 +96,19 @@
 
         <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="0"class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread1.jpg" alt="First slide">
+              <img class="d-block img-fluid" style = "width:900px; height:350px"src="img/mainBread1.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread2.jpg" alt="Second slide">
+              <img class="d-block img-fluid" style = "width:900px; height:350px"src="img/mainBread2.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread3.jpg" alt="Third slide">
+              <img class="d-block img-fluid" style = "width:900px; height:350px"src="img/mainBread3.jpg" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -144,13 +124,26 @@
         <div class="row">		
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/${list[2].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="pductDetail.jsp?productDTO=${list[0]}"><img class="card-img-top img-fluid" src="img/${list[0].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
-                  <a href="#">Item One</a>
+                  <a href="#">${list[0].getProductName()}</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>${list[0].getSellPrice()}</h5>
+                <p class="card-text">${list[0].getDescription()}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card h-100">
+              <a href="front?key=read&productCode=${list[1]}"><img class="card-img-top img-fluid" src="img/${list[1].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <div class="card-body" style = "background-color: #CCCCCC">
+                <h4 class="card-title">
+                  <a href="#">${list[1].getProductName()}</a>
+                </h4>
+                <h5>${list[1].getSellPrice()}</h5>
+                <p class="card-text">${list[1].getDescription()}</p>
               </div>
               
             </div>
@@ -158,13 +151,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/${list[3].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="front"><img class="card-img-top img-fluid" src="img/${list[2].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
-                  <a href="#">Item Two</a>
+                  <a href="#">${list[2].getProductName()}</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                <h5>${list[2].getSellPrice()}</h5>
+                <p class="card-text">${list[2].getDescription()}</p>
               </div>
               
             </div>
@@ -172,13 +165,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="front"><img class="card-img-top img-fluid" src="img/${list[3].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
-                  <a href="#">Item Three</a>
+                  <a href="#">${list[3].getProductName()}</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>${list[3].getSellPrice()}</h5>
+                <p class="card-text">${list[3].getDescription()}</p>
               </div>
               
             </div>
@@ -186,13 +179,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="front"><img class="card-img-top img-fluid" src="img/${list[4].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
-                  <a href="#">Item Four</a>
+                  <a href="#">${list[4].getProductName()}</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>${list[4].getSellPrice()}</h5>
+                <p class="card-text">${list[4].getDescription()}</p>
               </div>
               
             </div>
@@ -200,27 +193,13 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="front"><img class="card-img-top img-fluid" src="img/${list[5].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
-                  <a href="#">Item Five</a>
+                  <a href="#">${list[5].getProductName()}</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>${list[5].getSellPrice()}</h5>
+                <p class="card-text">${list[5].getDescription()}</p>
             </div>
           </div>
         </div>   

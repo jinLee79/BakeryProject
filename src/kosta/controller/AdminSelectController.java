@@ -2,18 +2,18 @@ package kosta.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import kosta.model.dto.ProductDTO;
 import kosta.model.service.ProductService;
 
-public class MainListController implements Controller
+
+
+public class AdminSelectController implements Controller
 {
 
 	@Override
@@ -24,36 +24,8 @@ public class MainListController implements Controller
 		try { //예외처리를 controller에서 처리함
 			//서비스 -> dao -> 그 결과를 list를 저장하고 list.jsp로 이동
 			List<ProductDTO> list = ProductService.selectAllProduct();
-			Integer rand[] = new Integer[6];
-			List<ProductDTO> randList = new ArrayList<>();
-			rand[0] = (int)(Math.random() * list.size());
-			randList.add(list.get(rand[0]));
-			int i = 0;
-			boolean check = false;
-			for(i = 1; i < rand.length; ++i)
-		    {
-				rand[i] = (int)(Math.random() * list.size());	
-				
-				for(int j = 0; j < i; ++j)
-				{
-					if(rand[i] == rand[j])
-					{
-						--i;
-						check = true;
-						break;
-					}
-				}
-				if(check == false)
-				{
-					randList.add(list.get(rand[i]));					
-				}
-				else
-				{
-					check = false;
-				}
-		    }
-			request.setAttribute("list", randList);
-			url="Main.jsp";
+			request.setAttribute("list", list);
+			url="AdminPduct.jsp";
 		} catch(SQLException e) {
 			request.setAttribute("errorMsg", e.getMessage());
 		}
@@ -61,4 +33,5 @@ public class MainListController implements Controller
 		mv.setPath(url);
 		return mv;
 	}
+
 }

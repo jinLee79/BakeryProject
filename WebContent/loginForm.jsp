@@ -11,8 +11,8 @@
 
 
 		$(function() {
-		$("input[type = 'button']").click(function() {
-		alert("dddd");
+		$("input[value = '로그아웃']").click(function() {
+
 		if(confirm("정말 로그아웃 할래?")){
 	
 			location.href="Logout.jsp";
@@ -29,7 +29,7 @@
 		  });
 		 */
 		
-		
+
 	
 	})
 </script>
@@ -48,20 +48,22 @@
 
  	          <input type = "password" style="min-width:210px; min-height:30px" class = "password" name="pwd" value = "비밀번호"/>
 
- 			  <button style="min-width:210px; min-height:30px" class = "btn btn-info btn-rm" >로그인</button>
+ 			  <button style="min-width:103px; min-height:30px" class = "btn btn-info btn-rm" >로그인</button>
+ 			  
+ 			  <input type = "button" style="min-width:103px; min-height:30px" class = "btn btn-info btn-rm" onclick="location.href='signUp.jsp'" value = "회원가입">
  	        </form>
  	        <%
  		}  else{//세션에 id있을때
 %>
 			
-		
-			
+	
  	         <h3><%=session.getAttribute("sessionId") %>님 로그인 중<br></h3>
- 	         <h5>
- 	         [접속시간 : ${AccessTime}]</h5><br>
- 	         <button  class = "btn btn-info btn-rm" onclick=" location.href='mypage.jsp'">회원정보수정</button>
+ 	         <h5>즐거운 빵 쇼핑 되세요~^-^</h5><br>
+		
+ 	         
+ 	       <input type="button"   class = "btn btn-info btn-rm" onclick=" location.href='mypage.jsp'" value="회원정보수정">
              <input type="button"  class = "btn btn-info btn-rm"  value="로그아웃" id = "logout">
-
+	
  			<%
  		} 
     

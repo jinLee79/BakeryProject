@@ -1,6 +1,8 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +16,9 @@
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  
+     <!-- Page level plugin CSS-->
+  <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
   <link href="css/shop-homepage.css" rel="stylesheet">
@@ -26,13 +31,17 @@
      #topLogo{font-family: 'Jeju Hallasan',cursive; font-size : 30px; vertical-align: middle;}
      nav div div a{font-family: 'Jeju Hallasan',cursive;}
      body > nav > div > a { margin-left: 20%;}
+     #dataTable > tbody > tr > td{vertical-align: middle}
   </style>
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
+	
 </script>
 </head>
 <body>
+
+
   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d4633">
     <div class="container">
@@ -43,7 +52,6 @@
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
 
 
 
@@ -51,7 +59,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
            <li class="nav-item active">
-            <a class="nav-link" href="AdminPduct.jsp">상품 관리
+            <a class="nav-link" href="front?key=adminlist">상품 관리
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -94,131 +102,63 @@
 
       <div class="col-lg-9">
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread1.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread3.jpg" alt="Third slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
-              </div>
-              
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
-              <div class="card-body" style = "background-color: #CCCCCC">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-            </div>
-          </div>
-        </div>
+<!-- DataTables Example -->
+		<br>
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            	상품 주문 목록</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead style = "text-align:center; vertical-align: middle">
                 
+                  <tr>
+                    <th>이미지</th>
+                    <th>상품코드</th>
+                    <th>상품명</th>
+                    <th>단가</th>
+                    <th>설명</th>
+                    <th>삭제</th>
+                  </tr>
+                </thead>
+                <tfoot style = "text-align:center; vertical-align: middle">
+                  <tr>
+                    <th>이미지</th>
+                    <th>상품코드</th>
+                    <th>상품명</th>
+                    <th>단가</th>
+                    <th>설명</th>
+                    <th>삭제</th>
+                  </tr>
+                </tfoot>
+                <tbody style = "text-align:center; vertical-align: bottom;">
+                
+                <c:forEach items="${requestScope.list}" var="adminprod">
+                  <tr>
+                    <td><img src = "${path}/img/${adminprod.fName}" style = "width : 50px; height : 50px"></td>
+                    <td>${adminprod.productCode }</td>
+                    <td>${adminprod.productName }</td>
+                    <td>${adminprod.sellPrice }</td>
+                    <td>${adminprod.description }</td>
+                    <td><input type="button" class="btn btn-danger btn-sm" value="삭제" onclick></td>
+                  </tr>
+                 </c:forEach>
+
+                 
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+
       </div>
-        <!-- /.row -->
-        <div style = "width: 100%" align = "center">
-			<button type = "button" class = "btn btn-success" onclick = "location.href = 'menuList.jsp'">더보기</button>        
-        </div>
-        <br>
-        </div>
-      <!-- /.col-lg-9 -->
-    </div>
-    <!-- /.row -->
-	</div>
-    <!-- /.container -->
-    
+      <!-- /.container-fluid -->
+
+
+</div>
+
 
 
 
@@ -234,25 +174,22 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   
+   <!-- Page level plugin JavaScript-->
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  
+  
+  
+  
+  
+  
+  
+    <!-- Demo scripts for this page-->
+  <script src="js/demo/datatables-demo.js"></script>
+  <script src="js/demo/chart-area-demo.js"></script>
+  
 </body>
 </html>
-
-
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<h1> 관리자가 주문관리를 하는 페이지 입니다.<br>
-쇼핑몰 전체의 주문 목록을 보고 주문상태를 수정하는 페이지입니다.<br>
-주문상세내역을 볼 수 있습니다.
-</h1>
-<h3> 관리자의 메인페이지에서 iframe으로 넣어도 괜찮을 듯요</h3>
-</body>
-</html>-->
 
 
 

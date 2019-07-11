@@ -93,28 +93,29 @@
             <table align="center" style="width: 500px; height: 300px;">
                <h1 align="center">회원정보</h1>
                 <tr align="center">
-                    <td id="title" style="width: 35%;" align="right" readonly>아이디</td>
-                   <td align="left"> <input type = "text" readonly value="<%=session.getAttribute("id") %>"/> </td>
+                    <td id="title" style="width: 35%;" align="right">아이디</td>
+                   <td align="left"> <input type = "text" readonly/> </td>
                 </tr>
                 <tr>
-                    <td id="pwd" style="width: 35%;" align="right">비밀번호</td>
+                    <td id="title" style="width: 35%;" align="right">비밀번호</td>
                     <td>
-                        <input type="password" name="password" maxlength="50" >
+                        <input type="password" name="password" maxlength="50" 
+                            value="">
                     </td>
                 </tr>
         
                 <tr>
-                    <td id="name" style="width: 35%;" align="right">이름</td>
+                    <td id="title" style="width: 35%;" align="right">이름</td>
                     <td> <input type = "text"/> </td>
                 </tr>
                 
                 <tr>
-                    <td id="age" style="width: 35%;" align="right">나이</td>
+                    <td id="title" style="width: 35%;" align="right">나이</td>
                     <td> <input type = "text"/> </td>
                 </tr>
                     
                 <tr>
-                    <td id="phone" style="width: 35%;" align="right">휴대전화</td>
+                    <td id="title" style="width: 35%;" align="right">휴대전화</td>
                     <td> 
                    <select>
                     <option> 010 </option>
