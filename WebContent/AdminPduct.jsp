@@ -107,7 +107,7 @@
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            	상품 주문 목록</div>
+            	상품  목록</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -135,14 +135,16 @@
                 <tbody style = "text-align:center; vertical-align: bottom;">
                 
                 <c:forEach items="${requestScope.list}" var="adminprod">
+                <form name = "requestForm" action = "${path}/front" method = "post">
                   <tr>
                     <td><img src = "${path}/img/${adminprod.fName}" style = "width : 50px; height : 50px"></td>
                     <td>${adminprod.productCode }</td>
                     <td>${adminprod.productName }</td>
                     <td>${adminprod.sellPrice }</td>
                     <td>${adminprod.description }</td>
-                    <td><input type="button" class="btn btn-danger btn-sm" value="삭제" onclick></td>
+                    <td><input type="button" class="btn btn-danger btn-sm" value="수정" onclick = "sendUpdate()"></td>
                   </tr>
+                  </form>
                  </c:forEach>
 
                  
@@ -150,7 +152,9 @@
               </table>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+          <div class="card-footer small text-muted" align = "center">
+          	<button type = button class = "btn btn-success btn-sm">상품 등록</button>
+          </div>
         </div>
 
       </div>
