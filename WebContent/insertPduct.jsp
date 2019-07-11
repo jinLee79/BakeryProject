@@ -36,10 +36,10 @@
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	function sendUpdate()
+	function sendInsert()
 	{
 		//수정폼
-		document.requestForm.key.value ="updateForm";
+		document.requestForm.key.value ="insert";
 		document.requestForm.submit();
 	}
 </script>
@@ -109,9 +109,7 @@
 
 <!-- DataTables Example -->
 		<br>
-		<form method="post" action="front" 
-                name="userInfo" onsubmit="return checkValue()">
-                
+		<form name = "requestForm" action = "${path}/front" method = "post"> 
             <table align="center" style="width: 500px; height: 300px;">
                <h1 align="center">상품등록</h1>
                 <tr align="center">
@@ -142,13 +140,14 @@
                 
               
               <tr align="center">
-                 <td colspan ="2"><input type="submit" value="등록하기"/>
-               <input type="button" value="뒤로가기"></td>
+                 <td colspan ="2">
+                <input class="btn btn-danger btn-sm" type="button" value="등록하기" onclick = "sendInsert()"/>
+               <input class="btn btn-danger btn-sm" type="button" value="뒤로가기"></td>
               </tr>
               
             </table>
             
-             
+             <input type=hidden name="key" value="">
         </form>
 		
         
