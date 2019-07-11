@@ -11,8 +11,8 @@
 
 
 		$(function() {
-		$("body > div.container > div > div.col-lg-3 > div > aside > button:nth-child(5)").click(function() {
-
+		$("input[type = 'button']").click(function() {
+		alert("dddd");
 		if(confirm("정말 로그아웃 할래?")){
 	
 			location.href="Logout.jsp";
@@ -22,14 +22,13 @@
 	})
 	
 	
-	  $("input").blur(function(){
+/* 	  $("input").blur(function(){
 		  $(this).val()="";
 		    $(this).css("background-color", "#ffffff");
 		    
 		  });
+		 */
 		
-		
-		  $("input").click(function(){
 		
 	
 	})
@@ -45,7 +44,7 @@
  			
  		    <form action="front"  method="post">
  		     <input type = "hidden"  name="key" value = "login"/>
- 	          <input type = "text" style="min-width:210px; min-height:30px" class = "text"  name="id" value = "아이디"/>
+ 	          <input type = "text" style="min-width:210px; min-height:30px" class = "text"  name="id" value = "아이디"  onclick = "function(this){this.value = '';}"/>
 
  	          <input type = "password" style="min-width:210px; min-height:30px" class = "password" name="pwd" value = "비밀번호"/>
 
@@ -61,7 +60,7 @@
  	         <h5>
  	         [접속시간 : ${AccessTime}]</h5><br>
  	         <button  class = "btn btn-info btn-rm" onclick=" location.href='mypage.jsp'">회원정보수정</button>
-             <input type="button"  class = "btn btn-info btn-rm" value="로그아웃">
+             <input type="button"  class = "btn btn-info btn-rm"  value="로그아웃" id = "logout">
 
  			<%
  		} 
