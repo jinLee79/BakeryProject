@@ -5,11 +5,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-
-
-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -26,39 +23,24 @@ fit=no">
 <style>
 	@import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
      body{background-color: #f7f0da;}
-      #topLogo{font-family: 'Jeju Hallasan',cursive; font-size : 30px; vertical-
-
-align: middle;}
+      #topLogo{font-family: 'Jeju Hallasan',cursive; font-size : 30px; vertical-align: middle;}
      nav div div a{font-family: 'Jeju Hallasan',cursive;}
      body > nav > div > a { margin-left: 20%;}
-  </style>
+ </style>
 
-<script 
-
-src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
 
 <body>
    <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: 
-
-#0d4633">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d4633">
     <div class="container">
-    <span  style = "color : white; font-size: 14px; font-family: 'Jeju 
-
-Hallasan',cursive; ">27년 변하지 않는 전통과 정성으로...</span>
-
+    <span  style = "color : white; font-size: 14px; font-family: 'Jeju Hallasan',cursive; ">27년 변하지 않는 전통과 정성으로...</span>
       <a class="navbar-brand" href="index.jsp" id = "topLogo">효모네 빵집</a>
-      
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-
-
-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
-
-aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
@@ -66,7 +48,6 @@ aria-label="Toggle navigation">
               <span class="sr-only">(current)</span>
             </a>
           </li>
- 
           <li class="nav-item">
             <a class="nav-link" href="#">찾아오시는 길</a>
           </li>
@@ -86,9 +67,7 @@ aria-label="Toggle navigation">
 
 			<div class="col-lg-3">
 
-        		<h1 class="my-4"><img class = "img img-fluid"  src = 
-
-"img/hyomo2.png"></h1>
+        		<h1 class="my-4"><img class = "img img-fluid"  src = "img/hyomo2.png"></h1>
         		<div class="list-group">
         		<%@ 
                 	    include file = "loginForm.jsp"
@@ -106,23 +85,17 @@ aria-label="Toggle navigation">
 	<table border="1">
 		<tr>
 			<td>
-				<img src=" ${path}/img/${productDTO.fName}" 
-
-width="340" heigth="300"}>
+				<img src=" ${path}/img/${productDTO.fName}" width="340" heigth="300"}>
 			</td>
 			<td>
-				<table border="1" style="height: 300px; width: 
-
-400px">
+				<table border="1" style="height: 300px; width: 400px">
 					<tr align="center">
 						<td> 상품명 </td>
 						<td> ${productDTO.productName}</td>
 					</tr>
 					<tr align="center">
 						<td> 가격 </td>
-						<td> <fmt:formatNumber 
-
-value="${productDTO.sellPrice}" pattern="###,###,###"/>원</td>
+						<td> <fmt:formatNumber value="${productDTO.sellPrice}" pattern="###,###,###"/>원</td>
 					</tr>
 					<tr align="center">
 						<td> 상품소개 </td>
@@ -130,33 +103,17 @@ value="${productDTO.sellPrice}" pattern="###,###,###"/>원</td>
 					</tr>
 					<tr align="center">
 						<td colspan="2">
-							<form name="form1" 
-
-method="post" action="front?key=cart&productCode" >
-								<input type="hidden" 
-
-name="key"  value="cart">
-								<input type="hidden" 
-
-name="productCode"  value=${productDTO.productCode }">
-								<select 
-
-name="quantity">
-									<c:forEach 
-
-begin="1"  end="10"  var="i">
-										
-
-<option value="${i }">${i}</option>
+							<form name="form1"  id="form1" method="post" action="front" >
+								<input type="hidden" name="key"  value="cart">
+								<input type="hidden" name="productCode"  value=${productDTO.productCode }">
+								<select name="quantity">
+									<c:forEach begin="1"  end="10"  var="i">
+										<option value="${i }">${i}</option>
 									</c:forEach>
 								</select> &nbsp;개
-								<input type="submit" 
-
- value="장바구니에 담기">
+								<input type="submit"  value="장바구니에 담기" >
 							</form>
-						<input type="button"  value="메인페
-
-이지로" onclick="location.href='${path}/index.jsp'"/>
+						<input type="button"  value="메인페이지로" onclick="location.href='${path}/index.jsp'"/>
 					</td>
 				</tr>
 			</table>

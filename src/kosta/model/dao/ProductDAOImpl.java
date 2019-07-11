@@ -31,15 +31,8 @@ public class ProductDAOImpl implements ProductDAO
 			
 			while(rs.next())
 			{
-				ProductDTO dto = new ProductDTO(rs.getString
-
-("PRODUCTCODE"),
-						rs.getString("PRODUCTNAME"), 
-
-rs.getInt("SELLPRICE"),
-						rs.getString("DESCRIPTION"), 
-
-rs.getString("FNAME"));
+				ProductDTO dto = new ProductDTO(rs.getString("PRODUCTCODE"),rs.getString("PRODUCTNAME"), rs.getInt("SELLPRICE"),
+						rs.getString("DESCRIPTION"), rs.getString("FNAME"));
 				System.out.println(rs.getString("PRODUCTCODE"));
 				System.out.println(rs.getString("PRODUCTNAME"));
 				System.out.println(rs.getString("SELLPRICE"));
@@ -71,15 +64,8 @@ rs.getString("FNAME"));
 			rs = ps.executeQuery();
 			
 			while(rs.next())	{
-				productDTO = new ProductDTO(rs.getString
-
-("productCode"),
-						rs.getString("productName"), 
-
-rs.getInt("sellPrice"),
-						rs.getString("description"), 
-
-rs.getString("fName"));
+				productDTO = new ProductDTO(rs.getString("productCode"), rs.getString("productName"), rs.getInt("sellPrice"),
+						rs.getString("description"), rs.getString("fName"));
 			}
 			
 		}		
@@ -109,15 +95,8 @@ rs.getString("fName"));
 			
 			while(rs.next())
 			{
-				ProductDTO dto = new ProductDTO(rs.getString
-
-("productCode"),
-						rs.getString("productName"), 
-
-rs.getInt("sellPrice"),
-						rs.getString("description"), 
-
-rs.getString("fName"));
+				ProductDTO dto = new ProductDTO(rs.getString("productCode"),	 rs.getString("productName"), rs.getInt("sellPrice"),
+						rs.getString("description"), rs.getString("fName"));
 				list.add(dto);
 			}
 	
@@ -148,15 +127,8 @@ rs.getString("fName"));
 			
 			while(rs.next())
 			{
-				ProductDTO dto = new ProductDTO(rs.getString
-
-("productCode"),
-						rs.getString("productName"), 
-
-rs.getInt("sellPrice"),
-						rs.getString("description"), 
-
-rs.getString("fName"));
+				ProductDTO dto = new ProductDTO(rs.getString("productCode"),	rs.getString("productName"), rs.getInt("sellPrice"),
+						rs.getString("description"), rs.getString("fName"));
 				list.add(dto);
 			}
 			

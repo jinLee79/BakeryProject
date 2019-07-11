@@ -16,8 +16,7 @@ public class ProductService {
 	 * List<ProductDTO> selectAllProduct()
 	 * select * from product order by productcode
 	 * */
-	public static List<ProductDTO> selectAllProduct() throws SQLException
-	{
+	public static List<ProductDTO> selectAllProduct() throws SQLException	{
 		List<ProductDTO> list = productDAO.selectAllProduct();
 		return list;
 	}
@@ -25,9 +24,7 @@ public class ProductService {
 	/**
 	 * 상품코드로 상품 검색
 	 * */
-	public static ProductDTO srchByProductCode(String productCode) throws 
-
-SQLException{
+	public static ProductDTO srchByProductCode(String productCode) throws SQLException{
 		ProductDTO productDTO = productDAO.srchByProductCode(productCode);
 		if(productDTO==null) {
 			throw new SQLException(productCode+"번에 해당하는 제품이 없습니다.");
