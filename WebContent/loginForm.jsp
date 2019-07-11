@@ -20,15 +20,18 @@
 			alert("서비스 더 이용해");
 		}
 	})
-
-	$("input").blur(function(){
 	
+	
+	  $("input").blur(function(){
+		  $(this).val()="";
 		    $(this).css("background-color", "#ffffff");
 		    
 		  });
 		
 		
+		  $("input").click(function(){
 		
+	
 	})
 </script>
 </head>
@@ -58,7 +61,7 @@
  	         <h5>
  	         [접속시간 : ${AccessTime}]</h5><br>
  	         <button  class = "btn btn-info btn-rm" onclick=" location.href='mypage.jsp'">회원정보수정</button>
-             <button  class = "btn btn-info btn-rm">로그아웃</button>
+             <input type="button"  class = "btn btn-info btn-rm" value="로그아웃">
 
  			<%
  		} 

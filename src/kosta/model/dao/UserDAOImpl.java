@@ -112,7 +112,7 @@ public class UserDAOImpl implements UserDAO {
 		return userDTO;
 	}
 	
-	//userId, userpwd 확인 시 회원정보(비밀번호, 이름, 나이, 전화번호) 수정
+	//수정 userId, userpwd 확인 시 회원정보(비밀번호, 이름, 나이, 전화번호)  
 	//point, grade는 수정불가
 	@Override
 	public int updateMyInfo(UserDTO userDTO) throws SQLException {

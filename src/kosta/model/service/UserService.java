@@ -43,7 +43,7 @@ public class UserService {
 	 * 회원정보수정
 	 * int updateMyInfo(UserDTO userDTO)
 	 * */
-		public int updateMyInfo(UserDTO userDTO)throws SQLException {
+		public static int updateMyInfo(UserDTO userDTO)throws SQLException {
 			int result;
 			result =userDAO.updateMyInfo(userDTO);
 			return result;

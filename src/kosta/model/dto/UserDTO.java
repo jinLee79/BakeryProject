@@ -20,8 +20,8 @@ public class UserDTO {
 		this.userName = userName;
 		this.age = age;
 		this.phone = phone;
-		this.point = point;
 		this.grade = grade;
+		this.point = point;
 	}
 
 	public String getUserId() {

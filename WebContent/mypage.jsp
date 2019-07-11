@@ -76,10 +76,10 @@
 
         <h1 class="my-4"><img class = "img img-fluid"  src = "img/hyomo2.png"></h1>
         <div class="list-group">
-  		<%@ 
+        <%@ 
                     include file = "loginForm.jsp"
         %>
-		</div>
+      </div>
       </div>
       <!-- /.col-lg-3 -->
     <div class="col-lg-9">
@@ -87,34 +87,34 @@
  <br>
         
         
-        <form method="post" action="ModifyPro.jsp"  name="userInfo" onsubmit="return checkValue()">
+        <form method="post" action="MainForm.jsp?contentPage=member/pro/ModifyPro.jsp" 
+                name="userInfo" onsubmit="return checkValue()">
                 
-            <table align="center" >
+            <table align="center" style="width: 500px; height: 300px;">
                <h1 align="center">회원정보</h1>
-                <tr>
-                    <td id="id">아이디</td>
-                   <td> <input type = "text" readonly/> </td>
+                <tr align="center">
+                    <td id="title" style="width: 35%;" align="right" readonly>아이디</td>
+                   <td align="left"> <input type = "text" readonly value="<%=session.getAttribute("id") %>"/> </td>
                 </tr>
                 <tr>
-                    <td id="pwd">비밀번호</td>
+                    <td id="pwd" style="width: 35%;" align="right">비밀번호</td>
                     <td>
-                        <input type="password" name="password" maxlength="50" 
-                            value="">
+                        <input type="password" name="password" maxlength="50" >
                     </td>
                 </tr>
         
                 <tr>
-                    <td id="name">이름</td>
+                    <td id="name" style="width: 35%;" align="right">이름</td>
                     <td> <input type = "text"/> </td>
                 </tr>
                 
                 <tr>
-                    <td id="age">나이</td>
+                    <td id="age" style="width: 35%;" align="right">나이</td>
                     <td> <input type = "text"/> </td>
                 </tr>
                     
                 <tr>
-                    <td id="phone">휴대전화</td>
+                    <td id="phone" style="width: 35%;" align="right">휴대전화</td>
                     <td> 
                    <select>
                     <option> 010 </option>
