@@ -36,7 +36,12 @@
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	
+	function sendUpdate()
+	{
+		//수정폼
+		document.requestForm.key.value ="updateForm";
+		document.requestForm.submit();
+	}
 </script>
 </head>
 <body>
