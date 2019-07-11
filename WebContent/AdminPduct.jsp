@@ -36,12 +36,6 @@
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	function sendUpdate()
-	{
-		//수정폼
-		document.requestForm.key.value ="updateForm";
-		document.requestForm.submit();
-	}
 </script>
 </head>
 <body>
@@ -124,7 +118,7 @@
                     <th>상품명</th>
                     <th>단가</th>
                     <th>설명</th>
-                    <th>삭제</th>
+                    <th>수정</th>
                   </tr>
                 </thead>
                 <tfoot style = "text-align:center; vertical-align: middle">
@@ -134,22 +128,22 @@
                     <th>상품명</th>
                     <th>단가</th>
                     <th>설명</th>
-                    <th>삭제</th>
+                    <th>수정</th>
                   </tr>
                 </tfoot>
                 <tbody style = "text-align:center; vertical-align: bottom;">
                 
                 <c:forEach items="${requestScope.list}" var="adminprod">
-                <form name = "requestForm" action = "${path}/front" method = "post">
+                
                   <tr>
                     <td><img src = "${path}/img/${adminprod.fName}" style = "width : 50px; height : 50px"></td>
                     <td>${adminprod.productCode }</td>
                     <td>${adminprod.productName }</td>
                     <td>${adminprod.sellPrice }</td>
                     <td>${adminprod.description }</td>
-                    <td><input type="button" class="btn btn-danger btn-sm" value="수정" onclick = "sendUpdate()"></td>
+                    <td><button type="button" class="btn btn-warning btn-sm" onclick = "location.href = 'updatePduct.jsp?productCode=${adminprod.productCode}'">수정</button></td>
                   </tr>
-                  </form>
+				
                  </c:forEach>
 
                  

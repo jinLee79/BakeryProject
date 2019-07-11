@@ -32,6 +32,23 @@ public class ProductService {
 		return productDTO;
 	}
 	
+	public static void insertProduct(ProductDTO dto) throws SQLException
+	{
+		if(productDAO.insert(dto) == 0)
+		{
+			throw new SQLException("상품 등록 실패");
+		}
+	}
+	
+	public static void updateProduct(ProductDTO dto) throws SQLException
+	{
+		if(productDAO.updateProduct(dto) ==0)
+		{
+			throw new SQLException("상품 수정 실패");
+		}
+	}
+	
+	
 	/**
 	 * 상품이름 키워드로 상품 검색(회원, 비회원, 관리자 모두 가능)
 	 * ProductDTO srchByKeyword(String keyWord)

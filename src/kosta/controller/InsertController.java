@@ -12,6 +12,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import kosta.model.dto.ProductDTO;
+import kosta.model.service.ProductService;
 
 public class InsertController implements Controller
 {
@@ -27,8 +28,9 @@ public class InsertController implements Controller
 		ModelAndView mv = new ModelAndView();
 		
 		ServletContext application = request.getServletContext();
-		String saveDir = application.getRealPath("/save");
-		int maxSize = 1024 * 1024 * 100; // 100M
+		String saveDir = application.getRealPath("img");
+		//System.out.println(saveDir);
+		int maxSize = 3000 * 3000 * 100; // 100M
 		String encoding = "UTF-8";
 		
 		MultipartRequest m = new MultipartRequest(request, saveDir, maxSize, encoding, new DefaultFileRenamePolicy());
@@ -37,25 +39,31 @@ public class InsertController implements Controller
 		String productCode = m.getParameter("code");
 		String productName = m.getParameter("name");
 		String sellPrice = m.getParameter("price");
-		String description = m.getParameter("des");
+		String des = m.getParameter("des");
 		String fName = m.getFilesystemName("file");
 		
-		ProductDTO dto = new ProductDTO(productCode, productName, Integer.parseInt(sellPrice), description, fName);
+		System.out.println(productCode);
+		System.out.println(productName);
+		System.out.println(sellPrice);
+		System.out.println(des);
+		System.out.println(fName);
+		
+		ProductDTO dto = new ProductDTO(productCode, productName, Integer.parseInt(sellPrice), des, fName);
+		
 		//만약 파일첨부가 되었다면... 파일이름, 파일크기를 저장
 		
-		if(m.getFilesystemName("file") != null)
-		{
+		//if(m.getFilesystemName("file") != null)
+		//{
 			//파일이름
-			dto.setfName(m.getFilesystemName("file"));
+			//dto.setfName(m.getFilesystemName("file"));
 			//파일크기
-			dto.setfSize((int)m.getFile("file").length());
-		}
+			//dto.setfSize((int)m.getFile("file").length());
+		//}
 		//
-		
 		try
 		{
-			ElectronicsService.insert(elec);
-			mv.setPath("elec");
+			ProductService.insertProduct(dto);
+			mv.setPath("front?key=adminmanage");
 			mv.setRedirect(true);
 		}
 		catch(SQLException e)
@@ -64,5 +72,5 @@ public class InsertController implements Controller
 			mv.setPath(url);
 		}
 		return mv;
-
+	}
 }

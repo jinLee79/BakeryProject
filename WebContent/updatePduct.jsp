@@ -38,14 +38,8 @@
 <script type="text/javascript">
 	
 	function checkValid() {
-	    var f = window.document.insertForm;
+	    var f = window.document.updateForm;
 			
-		if ( f.code.value == "")
-		{
-		    alert( "상품 코드를 입력해 주세요." );
-		    f.code.focus();
-			return false;
-	    }
 		if ( f.name.value == "" )
 		{
 			alert( "상품 이름을 입력해 주세요." );
@@ -134,16 +128,16 @@
 <!-- DataTables Example -->
 		<br>
 		  
-		<form name = "insertForm" action = "front?key=insert" method = "post" enctype="multipart/form-data" onSubmit='return checkValid()'> 
+		<form name = "updateForm" action = "front?key=update" method = "post" enctype="multipart/form-data" onSubmit='return checkValid()'> 
             <table align="center" style="width: 500px; height: 300px;">
                <h1 align="center">상품등록</h1>
                 <tr align="center">
                     <td id="title" style="width: 35%;" align="right" >상품코드</td>
-                   <td align="left"> <input type = "text" name = "code"/> </td>
+                   <td align="left"> <input style = "background: #CCCCCC" type = "text" name = "code" value = "<%=request.getParameter("productCode")%>" READONLY/> </td>
                 </tr>
                 <tr>
                     <td id="title" style="width: 35%;" align="right" >상품명</td>
-                    <td> <input type = "text" name = "name"/></td>
+                    <td> <input type = "text" name = "name" value = ""/></td>
                 </tr>
         
                 <tr>
@@ -160,11 +154,10 @@
                     <td id="title" style="width: 35%;" align="right" name="img">이미지</td>
                     <td> <input type="file" name="file" maxlength="60" size="40"> </td>
                 </tr>
-                
               
               <tr align="center">
                  <td colspan ="2">
-                <input class="btn btn-danger btn-sm" type="submit" value="등록하기"/>
+                <input class="btn btn-danger btn-sm" type="submit" value="수정하기"/>
                <input class="btn btn-danger btn-sm" type="button" value="뒤로가기"></td>
               </tr>
               

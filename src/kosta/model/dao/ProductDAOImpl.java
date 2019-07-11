@@ -147,7 +147,7 @@ public class ProductDAOImpl implements ProductDAO
 		Connection con = null;
 		PreparedStatement ps = null;
 		int rs = 0;
-		String sql = "insert into product values(?, ?, ?, ?, ?)";
+		String sql = "insert into product(productcode, productname, fname, sellprice, description) values(?, ?, ?, ?, ?)";
 		
 		try
 		{
@@ -155,12 +155,11 @@ public class ProductDAOImpl implements ProductDAO
 			ps = con.prepareStatement(sql);
 			ps.setString(1, productDTO.getProductCode());
 			ps.setString(2, productDTO.getProductName());
-			ps.setInt(3, productDTO.getSellPrice());
-			ps.setString(4, productDTO.getDescription());
-			ps.setString(5, productDTO.getfName());
+			ps.setString(3, productDTO.getfName());
+			ps.setInt(4, productDTO.getSellPrice());
+			ps.setString(5, productDTO.getDescription());
 			
 			rs = ps.executeUpdate();
-		
 		}
 		finally
 		{
@@ -175,7 +174,7 @@ public class ProductDAOImpl implements ProductDAO
 		Connection con = null;
 		PreparedStatement ps = null;
 		int rs = 0;
-		String sql = "update product set productname=?, sellprice=?, description=?. fname=? where productcode=?";
+		String sql = "update product set productname=?, sellprice=?, description=?, fname=? where productcode=?";
 		
 		try
 		{
