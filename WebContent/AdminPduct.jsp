@@ -64,7 +64,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
            <li class="nav-item active">
-            <a class="nav-link" href="front?key=adminlist">상품 관리
+            <a class="nav-link" href="front?key=adminmanage">상품 관리
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -158,7 +158,7 @@
             </div>
           </div>
           <div class="card-footer small text-muted" align = "center">
-          	<button type = button class = "btn btn-success btn-sm">상품 등록</button>
+          	<button type = button class = "btn btn-success btn-sm" onclick = "location.href='insertPduct.jsp'">상품 등록</button>
           </div>
         </div>
 

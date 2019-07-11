@@ -36,11 +36,35 @@
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-	function sendInsert()
-	{
-		//수정폼
-		document.requestForm.key.value ="insert";
-		document.requestForm.submit();
+	
+	function checkValid() {
+	    var f = window.document.insertForm;
+			
+		if ( f.code.value == "")
+		{
+		    alert( "상품 코드를 입력해 주세요." );
+		    f.code.focus();
+			return false;
+	    }
+		if ( f.name.value == "" )
+		{
+			alert( "상품 이름을 입력해 주세요." );
+			f.name.focus();
+			return false;
+		}
+		if ( f.price.value == "" )
+		{
+			alert( "상품 가격을 입력해 주세요." );
+			f.price.focus();
+			return false;
+		}
+		if ( f.des.value == "" )
+		{
+	        alert( "상품 설명을 입력해 주세요." );
+	        f.des.focus();
+	        return false;
+	    }	
+	    return true;
 	}
 </script>
 </head>
@@ -109,28 +133,29 @@
 
 <!-- DataTables Example -->
 		<br>
-		<form name = "requestForm" action = "${path}/front" method = "post"> 
+		  
+		<form name = "insertForm" action = "../front?key=insert" method = "post" enctype="multipart/form-data" onSubmit='return checkValid()'> 
             <table align="center" style="width: 500px; height: 300px;">
                <h1 align="center">상품등록</h1>
                 <tr align="center">
                     <td id="title" style="width: 35%;" align="right" >상품코드</td>
-                   <td align="left"> <input type = "text" /> </td>
+                   <td align="left"> <input type = "text" name = "code"/> </td>
                 </tr>
                 <tr>
                     <td id="title" style="width: 35%;" align="right" >상품명</td>
                     <td>
-                        <input type = "text" />
+                        <input type = "text" name = "name"/>
                     </td>
                 </tr>
         
                 <tr>
                     <td id="title" style="width: 35%;" align="right">가격</td>
-                    <td> <input type = "text"  name="price"/> </td>
+                    <td> <input type = "text"  name="price" name = "price"/> </td>
                 </tr>
                 
                 <tr>
                     <td id="title" style="width: 35%;" align="right" name="description">설명</td>
-                    <td> <input type = "text"  name="description"/> </td>
+                    <td> <input type = "text"  name="description" name = "des"/> </td>
                 </tr>
                 
                 <tr>
@@ -141,7 +166,7 @@
               
               <tr align="center">
                  <td colspan ="2">
-                <input class="btn btn-danger btn-sm" type="button" value="등록하기" onclick = "sendInsert()"/>
+                <input class="btn btn-danger btn-sm" type="submit" value="등록하기"/>
                <input class="btn btn-danger btn-sm" type="button" value="뒤로가기"></td>
               </tr>
               
