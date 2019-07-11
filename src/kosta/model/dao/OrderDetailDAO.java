@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import kosta.model.dto.OrderDTO;
+import kosta.model.dto.OrderDetailsDTO;
 
 public interface OrderDetailDAO {
 	
@@ -14,6 +15,12 @@ public interface OrderDetailDAO {
 	 * */
 	int insertOrder(OrderDTO orderDTO) throws SQLException;
 	
+	
+	/**
+	 *	상품코드로 주문상세내역보기 
+	 **/
+	
+	OrderDetailsDTO searchByProcode(String pcode) throws SQLException;
 	/**
 	 * 개별 회원이 자신의 주문목록 보기
 	 * OrderDTO viewMyOrder(String userId)

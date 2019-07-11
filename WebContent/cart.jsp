@@ -1,5 +1,12 @@
+<%@page import="kosta.model.dto.ProductDTO"%>
+<%@page import="kosta.model.dto.OrderDTO"%>
+<%@page import="kosta.controller.CartController"%>
+<%@page import="java.util.Enumeration"%>
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="cartcontroller" class="kosta.controller.CartController" scope="session"/>
+<jsp:useBean id="product" class="kosta.model.dto.ProductDTO" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +39,7 @@
   </style>
 
 </head>
+
 
 <body>
   <!-- Navigation -->
@@ -87,37 +95,158 @@
       <!-- /.col-lg-3 -->
 
 <div class="col-lg-9">
-
 <!-- DataTables Example -->
 		<br>
         <div class="card mb-3">
           <div class="card-header">
             <i class="fas fa-table"></i>
-            	장바구니 목록</div>
+            	<h2>장바구니 목록 </h2></div>
           <div class="card-body">
             <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+             
+	<form action="cartprocess.jsp" method="get">
+
+	 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead style = "text-align:center; vertical-align: middle">
-                  <tr>
-                    <th> 　이미지</th>
-                    <th> 　상품코드</th>
-                    <th> 　상품명</th>
-                    <th> 　수량</th>
-                    <th> 　단가</th>
-                    <th> 　가격</th>
-                    <th> 　삭제</th>
-                  </tr>
-                </thead>
-                <tfoot style = "text-align:center; vertical-align: middle">
-                  <tr>
-                    <th>이미지</th>
-                    <th>상품코드</th>
-                    <th>상품명</th>
-                    <th>수량</th>
-                    <th>단가</th>
-                    <th>가격</th>
-                    <th>삭제</th>
-                  </tr>
+     
+
+			<tr style="background-color: gold">
+
+				<th>주문상품</th><th>가격</th><th>수량</th><th>수정/삭제</th><th>조회</th>
+
+			</tr>
+														<%
+														//${Cart[cartList]}
+														Object[] objKey=Cart.keySet(). toArray();
+														for(int i=0;i<objKey.length;i++){
+														%>
+														<tr>
+														<td><%=objKey[i]%></td>
+														<td><%=Cart.get(objKey[i]) %></td>
+														</tr>
+														<%
+														}
+										
+
+						int totalPrice = 0;
+
+		
+
+				
+				
+							//장바구니가 비었을경우
+				
+							if(Cart.size()==0){
+				
+						%>
+				
+							<tr><td>주문 건수가 없습니다.</td></tr>
+				
+						<% 
+				
+							//장바구니에 내용이 있을경우
+				
+							} else { 
+				
+								//카트의 모든 제품코드(키값)을 추출
+				
+								Enumeration<String> enu = Cart.keys();
+				
+								while(enu.hasMoreElements()){ //남은 키 값이 있다면
+				
+										
+				
+									//해당 제품코드(키값)의 카트내용을 담음
+				
+									CartDTO order = (CartDTO)Cart.get(enu.nextElement());
+				
+										
+				
+									//해당 제품코드의 제품정보를 db에서 가져옴
+				
+									
+				
+										
+				
+									int price =(int)( request.getAttribute("sellprice"));
+				
+									int quantity = (int)( request.getAttribute("quantity"));
+				
+									int subTotal = price * quantity;
+				
+									totalPrice += subTotal;
+				
+						%>		
+				
+								
+				
+								<tr style="text-align: center;">
+				
+									<td><%=product.getProductName() %></td>
+				
+									<td><%=subTotal %></td>
+				
+									<td>
+				
+										<input type="text" name="quantity" size="5" value="<%=order.getQuantity() %>" style="text-align: center;">
+				
+									</td>
+				
+									<td> 
+				
+										<!-- form 에서 가져갈 데이터 -->
+				
+										<input type="hidden" name="flag">
+				
+										<input type="hidden" name="productCode" value="<%=product.getProductName() %>">
+				
+										<!-- 수정/삭제 버튼 -->
+				
+										<input type="button" value="수정" onclick="cartUpdate(this.form)" style="background-color: silver"> /
+				
+										<input type="button" value="삭제" onclick="cartDelete(this.form)" style="background-color: silver"> 
+				
+									</td>
+				
+									<td><a href="javascript:productDetail('<%=product.getProductCode()%>')">상세보기</a></td>
+				
+								</tr>
+				
+						<%
+				
+								}
+				
+						%>
+				
+							<tr>
+				
+								<td colspan="5">
+				
+									<br/>
+				
+									<b>총 결제 금액 : <%=totalPrice %> 원</b>
+				
+									&nbsp;&nbsp;&nbsp;
+				
+									<a href="orderlist.jsp">[ 주문하기 ]</a>
+				
+								</td>
+				
+							</tr>
+				
+						<%	
+				
+							}
+				
+						%>
+				
+						</table>
+				
+					
+				
+					</form>
+				
+
                 </tfoot>
                 <tbody style = "text-align:center; vertical-align: bottom;">
 
@@ -133,7 +262,26 @@
 
 </div>
   <!-- ------------------------------------------ -->
- 
+  <script type="text/javascript">
+ function cartUpdate(form){
+
+	form.flag.value="update";
+
+	form.submit();
+
+}
+
+function cartDelete(form){
+
+	form.flag.value="delete";
+
+	form.submit();
+
+}
+
+
+
+</script>
 
 
 
