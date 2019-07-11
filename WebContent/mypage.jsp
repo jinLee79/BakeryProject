@@ -87,17 +87,16 @@
  <br>
         
         
-        <form method="post" action="MainForm.jsp?contentPage=member/pro/ModifyPro.jsp" 
-                name="userInfo" onsubmit="return checkValue()">
+        <form method="post" action="ModifyPro.jsp"  name="userInfo" onsubmit="return checkValue()">
                 
             <table align="center" >
                <h1 align="center">회원정보</h1>
                 <tr>
-                    <td id="title">아이디</td>
+                    <td id="id">아이디</td>
                    <td> <input type = "text" readonly/> </td>
                 </tr>
                 <tr>
-                    <td id="title">비밀번호</td>
+                    <td id="pwd">비밀번호</td>
                     <td>
                         <input type="password" name="password" maxlength="50" 
                             value="">
@@ -105,17 +104,17 @@
                 </tr>
         
                 <tr>
-                    <td id="title">이름</td>
+                    <td id="name">이름</td>
                     <td> <input type = "text"/> </td>
                 </tr>
                 
                 <tr>
-                    <td id="title">나이</td>
+                    <td id="age">나이</td>
                     <td> <input type = "text"/> </td>
                 </tr>
                     
                 <tr>
-                    <td id="title">휴대전화</td>
+                    <td id="phone">휴대전화</td>
                     <td> 
                    <select>
                     <option> 010 </option>

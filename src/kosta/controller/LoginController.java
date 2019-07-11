@@ -22,14 +22,22 @@ public class LoginController implements Controller {
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");
 		
+
+		
 		//이동할 url 기본 하나 세팅
 		String url = "errorView/error.jsp"; //여기로 들어올 때는 root로 들어오니까 폴더를 지정해줘야 된다.
 		HttpSession session = request.getSession();
 		try {	
 			UserDTO dto =UserService.loginCheck(id, pwd);
-	       session.setAttribute("sessionId", dto.getUserId());	
+		 session.setAttribute("sessionId", dto.getUserId());	
 	       session.setAttribute("sessionName", dto.getUserName());	
-			url = "index.jsp"; 
+	       
+	   //    String sessionId=(String) session.getAttribute("sessionId");
+	       if(session.getAttribute("sessionId").equals("admin")) {
+	    	   url = "AdminIndex.jsp";
+	       }else url = "index.jsp"; 
+	       
+	       
 		}
 		catch (SQLException e) { //SQLException이 날 수도 있단 얘기....error.jsp로 가게 만든다.
 			request.setAttribute("errorMsg", e.getMessage()); //error.jsp에서 ${requestScope.errorMsg} 값을 정해줌..

@@ -40,10 +40,15 @@ public class UserService {
 	 * */
 	
 	/**
-	 * userId, userpwd 확인 시 회원정보(비밀번호, 이름, 나이, 전화번호) 수정
+	 * 회원정보수정
 	 * int updateMyInfo(UserDTO userDTO)
 	 * */
-	
+		public int updateMyInfo(UserDTO userDTO)throws SQLException {
+			int result;
+			result =userDAO.updateMyInfo(userDTO);
+			return result;
+		}
+		
 	/**
 	 * 회원 탈퇴
 	 * int deleteMyInfo(String userId)
