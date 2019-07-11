@@ -1,6 +1,8 @@
  <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+   <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +31,7 @@
      #topLogo{font-family: 'Jeju Hallasan',cursive; font-size : 30px; vertical-align: middle;}
      nav div div a{font-family: 'Jeju Hallasan',cursive;}
      body > nav > div > a { margin-left: 20%;}
+     #dataTable > tbody > tr > td{vertical-align: middle}
   </style>
 
 <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
@@ -37,6 +40,8 @@
 </script>
 </head>
 <body>
+
+
   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d4633">
     <div class="container">
@@ -54,7 +59,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
            <li class="nav-item active">
-            <a class="nav-link" href="AdminPduct.jsp">상품 관리
+            <a class="nav-link" href="front?key=adminlist">상품 관리
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -107,6 +112,7 @@
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead style = "text-align:center; vertical-align: middle">
+                
                   <tr>
                     <th>이미지</th>
                     <th>상품코드</th>
@@ -127,78 +133,18 @@
                   </tr>
                 </tfoot>
                 <tbody style = "text-align:center; vertical-align: bottom;">
+                
+                <c:forEach items="${requestScope.list}" var="adminprod">
                   <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A08</td>
-                    <td>단팥빵</td>
-                    <td>3</td>
-                    <td>3000</td>
-                    <td>9000</td>
+                    <td><img src = "${path}/img/${adminprod.fName}" style = "width : 50px; height : 50px"></td>
+                    <td>${adminprod.productCode }</td>
+                    <td>${adminprod.productName }</td>
+                    <td>${adminprod.sellPrice }</td>
+                    <td>${adminprod.description }</td>
+                    <td><input type="button" class="btn btn-danger btn-sm" value="삭제" onclick></td>
                   </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A06</td>
-                    <td>소보루</td>
-                    <td>2</td>
-                    <td>3500</td>
-                    <td>7000</td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A04</td>
-                    <td>소세지빵</td>
-                    <td>5</td>
-                    <td>2000</td>
-                    <td>10000</td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A02</td>
-                    <td>메론빵</td>
-                    <td>3</td>
-                    <td>7000</td>
-                    <td>21000</td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A01</td>
-                    <td>식빵</td>
-                    <td>1</td>
-                    <td>6000</td>
-                    <td>6000</td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A03</td>
-                    <td>고로께</td>
-                    <td>2</td>
-                    <td>8000</td>
-                    <td>16000</td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A07</td>
-                    <td>감자빵</td>
-                    <td>5</td>
-                    <td>9000</td>
-                    <td>45000</td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A05</td>
-                    <td>옥수수식빵</td>
-                    <td>1</td>
-                    <td>10000</td>
-                    <td>10000</td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A09</td>
-                    <td>치즈계란빵</td>
-                    <td>8</td>
-                    <td>11000</td>
-                    <td>88000</td>
-                  </tr>
+                 </c:forEach>
+
                  
                 </tbody>
               </table>
@@ -244,23 +190,6 @@
   
 </body>
 </html>
-
-
-<!--
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<h1> 관리자가 주문관리를 하는 페이지 입니다.<br>
-쇼핑몰 전체의 주문 목록을 보고 주문상태를 수정하는 페이지입니다.<br>
-주문상세내역을 볼 수 있습니다.
-</h1>
-<h3> 관리자의 메인페이지에서 iframe으로 넣어도 괜찮을 듯요</h3>
-</body>
-</html>-->
 
 
 

@@ -51,7 +51,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="AdminPduct.jsp">상품 관리
+            <a class="nav-link" href="front?key=adminlist">상품 관리
               <span class="sr-only">(current)</span>
             </a>
           </li>
