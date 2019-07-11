@@ -7,7 +7,9 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-
+
+fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
@@ -24,7 +26,9 @@
 <style>
 	@import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css);
      body{background-color: #f7f0da;}
-     #topLogo{font-family:'Jeju Hallasan',cursive; font-size : 30px; vertical-align: middle;}
+     #topLogo{font-family:'Jeju Hallasan',cursive; font-size : 30px; vertical-align: 
+
+middle;}
      nav div div a{font-family: 'Jeju Hallasan',cursive;}
      body > nav > div > a { margin-left: 20%;}
   </style>
@@ -53,17 +57,26 @@
 	}
 	
 </script>
+
 </head>
 <body>
 
 
   <!-- Navigation -->  
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d4633">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: 
+
+#0d4633">
     <div class="container">
-    <span  style = "color : white; font-size: 14px; font-family: 'Jeju Hallasan',cursive; ">27년 변하지 않는 전통과 정성으로...</span>
+    <span  style = "color : white; font-size: 14px; font-family: 'Jeju 
+
+Hallasan',cursive; ">27년 변하지 않는 전통과 정성으로...</span>
       <a class="navbar-brand" href="index.jsp" id = "topLogo">효모네 빵집</a>
       
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-
+
+target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" 
+
+aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       
@@ -71,7 +84,9 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0);" onclick="menuList();">제품 소개
+            <a class="nav-link" href="javascript:void(0);" onclick="menuList();">제
+
+품 소개
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -114,28 +129,42 @@
 
       <div class="col-lg-9">
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide my-4" data-
+
+ride="carousel">
           <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" 
+
+class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread1.jpg" alt="First slide">
+              <img class="d-block img-fluid" style = "width:900px; height:350px" 
+
+src="img/mainBread1.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread2.jpg" alt="Second slide">
+              <img class="d-block img-fluid" style = "width:900px; height:350px" 
+
+src="img/mainBread2.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" style = "width:900px; height:350px" src="img/mainBread3.jpg" alt="Third slide">
+              <img class="d-block img-fluid" style = "width:900px; height:350px" 
+
+src="img/mainBread3.jpg" alt="Third slide">
             </div>
           </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" 
+
+role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#carouselExampleIndicators" 
+
+role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>
@@ -144,13 +173,17 @@
         <div class="row">		
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/${list[2].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="pductDetail.jsp?productDTO=${list[2]}"><img class="card-img-
+
+top img-fluid" src="img/${list[2].getfName()}" style = "width:250px; height:150px" 
+
+alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item One</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>${list[2].getSellPrice() }</h5>
+                <p class="card-text">${list[2].getDescription() }</p>
               </div>
               
             </div>
@@ -158,13 +191,19 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/${list[3].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="front?key=read&productCode=${list[3].getProductCode()}"><img 
+
+class="card-img-top img-fluid" src="img/${list[3].getfName()}" style = "width:250px; 
+
+height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Two</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur 
+
+adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
               </div>
               
             </div>
@@ -172,13 +211,17 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="front"><img class="card-img-top img-fluid" 
+
+src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Three</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur 
+
+adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               
             </div>
@@ -186,13 +229,17 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="front"><img class="card-img-top img-fluid" 
+
+src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Four</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur 
+
+adipisicing elit. Amet numquam aspernatur!</p>
               </div>
               
             </div>
@@ -200,13 +247,17 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="front"><img class="card-img-top img-fluid" 
+
+src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Five</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur 
+
+adipisicing elit. Amet numquam aspernatur! Lorem ipsum dolor sit amet.</p>
               </div>
               
             </div>
@@ -214,20 +265,26 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="front"><img class="card-img-top img-fluid" 
+
+src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">Item Six</a>
                 </h4>
                 <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur 
+
+adipisicing elit. Amet numquam aspernatur!</p>
             </div>
           </div>
         </div>   
       </div>
         <!-- /.row -->
         <div style = "width: 100%" align = "center">
-			<button type = "button" class = "btn btn-success" onclick = "location.href = 'front'">더보기</button>        
+			<button type = "button" class = "btn btn-success" onclick = 
+
+"location.href = 'front'">더보기</button>        
         </div>
         <br>
         </div>

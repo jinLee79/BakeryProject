@@ -31,9 +31,15 @@ public class ProductDAOImpl implements ProductDAO
 			
 			while(rs.next())
 			{
-				ProductDTO dto = new ProductDTO(rs.getString("PRODUCTCODE"),
-						rs.getString("PRODUCTNAME"), rs.getInt("SELLPRICE"),
-						rs.getString("DESCRIPTION"), rs.getString("FNAME"));
+				ProductDTO dto = new ProductDTO(rs.getString
+
+("PRODUCTCODE"),
+						rs.getString("PRODUCTNAME"), 
+
+rs.getInt("SELLPRICE"),
+						rs.getString("DESCRIPTION"), 
+
+rs.getString("FNAME"));
 				System.out.println(rs.getString("PRODUCTCODE"));
 				System.out.println(rs.getString("PRODUCTNAME"));
 				System.out.println(rs.getString("SELLPRICE"));
@@ -57,7 +63,9 @@ public class ProductDAOImpl implements ProductDAO
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from product where productcode=?";
+		String sql = "select * from product where upper(productcode)=upper
+
+(?)";
 		try		{
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
@@ -65,9 +73,15 @@ public class ProductDAOImpl implements ProductDAO
 			rs = ps.executeQuery();
 			
 			while(rs.next())	{
-				productDTO = new ProductDTO(rs.getString("productCode"),
-						rs.getString("productName"), rs.getInt("sellPrice"),
-						rs.getString("description"), rs.getString("fName"));
+				productDTO = new ProductDTO(rs.getString
+
+("productCode"),
+						rs.getString("productName"), 
+
+rs.getInt("sellPrice"),
+						rs.getString("description"), 
+
+rs.getString("fName"));
 			}
 			
 		}		
@@ -97,9 +111,15 @@ public class ProductDAOImpl implements ProductDAO
 			
 			while(rs.next())
 			{
-				ProductDTO dto = new ProductDTO(rs.getString("productCode"),
-						rs.getString("productName"), rs.getInt("sellPrice"),
-						rs.getString("description"), rs.getString("fName"));
+				ProductDTO dto = new ProductDTO(rs.getString
+
+("productCode"),
+						rs.getString("productName"), 
+
+rs.getInt("sellPrice"),
+						rs.getString("description"), 
+
+rs.getString("fName"));
 				list.add(dto);
 			}
 	
@@ -130,9 +150,15 @@ public class ProductDAOImpl implements ProductDAO
 			
 			while(rs.next())
 			{
-				ProductDTO dto = new ProductDTO(rs.getString("productCode"),
-						rs.getString("productName"), rs.getInt("sellPrice"),
-						rs.getString("description"), rs.getString("fName"));
+				ProductDTO dto = new ProductDTO(rs.getString
+
+("productCode"),
+						rs.getString("productName"), 
+
+rs.getInt("sellPrice"),
+						rs.getString("description"), 
+
+rs.getString("fName"));
 				list.add(dto);
 			}
 			
@@ -179,7 +205,9 @@ public class ProductDAOImpl implements ProductDAO
 		Connection con = null;
 		PreparedStatement ps = null;
 		int rs = 0;
-		String sql = "update product set productname=?, sellprice=?, description=?. fname=? where productcode=?";
+		String sql = "update product set productname=?, sellprice=?, 
+
+description=?. fname=? where productcode=?";
 		
 		try
 		{

@@ -13,15 +13,19 @@ import kosta.model.service.ProductService;
 public class ReadController implements Controller {
 
 	@Override
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	public ModelAndView handleRequest(HttpServletRequest request, 
 
+HttpServletResponse response)
+			throws ServletException, IOException {
+		
 		String productCode = request.getParameter("productCode");
-				
+		
 		ModelAndView mv = new ModelAndView();
 		String url="error.jsp";
 		try {
-			 ProductDTO productDTO = ProductService.srchByProductCode(productCode);
+			 ProductDTO productDTO = ProductService.srchByProductCode
+
+(productCode);
 			 request.setAttribute("productDTO", productDTO);
 			 url = "pductDetail.jsp";
 		} catch(SQLException e) {
@@ -29,6 +33,7 @@ public class ReadController implements Controller {
 		}
 		mv.setPath(url);
 		return mv;
+
 	}
 
 }
