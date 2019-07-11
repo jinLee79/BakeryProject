@@ -7,19 +7,21 @@ public class UserDTO {
 	private String userName;
 	private int age;
 	private String phone;
-	private int point;
 	private String grade;
+	private int point;
 	
-	
-
 	public UserDTO() {	}
 	
-	public UserDTO(String userId, String userPwd, String userName, int age, String phone,  String grade, int point) {
+	public UserDTO(String userId, String userPwd, String userName, int age, String phone) {
 		this.userId = userId;
 		this.userPwd = userPwd;
 		this.userName = userName;
 		this.age = age;
 		this.phone = phone;
+	}
+
+	public UserDTO(String userId, String userPwd, String userName, int age, String phone,  String grade, int point) {
+		this(userId, userPwd, userName, age, phone);
 		this.grade = grade;
 		this.point = point;
 	}

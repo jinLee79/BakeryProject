@@ -41,6 +41,7 @@
   $(function(){
 	  $("#userId").keyup(function(){
 		  if($(this).val()==""){
+			  $("#idmsg").text("중복결과여부")
 			  return;
 		  }
 		  $.ajax({
@@ -103,15 +104,30 @@
     </div>
   </nav>
   
+  <!-- Sidebar (hidden by default) -->
+    
+    
   <!-- Page Content -->
+  <div class="container">
 
+    <div class="row">
+
+      <div class="col-lg-3">
+
+        <h1 class="my-4"><img class = "img img-fluid"  src = "img/hyomo2.png"></h1>
+        <div class="list-group">
+        <%@ 
+                    include file = "loginForm.jsp"
+        %>
+      </div>
+      </div>
       <!-- /.col-lg-3 -->
 	 <div class="col-lg-9" align="center">
 	 
     	 
  <h1> 회원가입</h1>
  <table boder = "1" bgcolor = "#f7f0da"  cellspacing = "1" >
-	 <form name="inForm" method="post" id="inForm"  action="front">
+	 <form name="inForm" method="post" id="inForm"  action="front?key=signup">
 		  <tr>
 			   <td text-align="center">아이디 </td>
 			   <td><input type=text  style="height: 22px" id="userId"  name="userId"/></td>
@@ -169,7 +185,12 @@
 
       </div>
       <!-- /.col-lg-9 -->
-    
+      
+      </div>
+    <!-- /.row -->
+
+   </div>
+    <!-- /.container -->
    	<div class="w3-center w3-padding-32">
     
   </div>

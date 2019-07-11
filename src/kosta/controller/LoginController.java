@@ -31,7 +31,7 @@ public class LoginController implements Controller {
 		HttpSession session = request.getSession();
 		try {	
 			UserDTO dto =UserService.loginCheck(id, pwd);
-		 session.setAttribute("sessionId", dto.getUserId());	
+		   session.setAttribute("sessionId", dto.getUserId());	
 	       session.setAttribute("sessionName", dto.getUserName());	
 	       
 	   //    String sessionId=(String) session.getAttribute("sessionId");

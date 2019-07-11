@@ -41,7 +41,7 @@ public class UserDAOImpl implements UserDAO {
 		Connection con = null;
 		PreparedStatement ps = null;
 		int result = 0;
-		String sql ="insert into users values(?,?,?, ?, ?, 2000, green)";
+		String sql ="insert into users values(?,?, ?, ?, ?,'green', 2000)";
 		try {
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);

@@ -15,6 +15,11 @@ public class UserService {
 	 * 등록(회원가입 폼에서)
 	 * static int signUp(UserDTO userDTO)
 	 * */
+	public static int signUp(UserDTO userDTO) throws SQLException {
+		int result = userDAO.signUp(userDTO);
+		if(result !=1) throw new SQLException("회원가입에 오류가 생겼습니다. 다시 시도해주세요.");
+		return result;
+	}
 	
 	/**
 	 * 회원가입시 아이디 중복 체크

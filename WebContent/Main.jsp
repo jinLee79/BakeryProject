@@ -124,7 +124,7 @@
         <div class="row">		
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="pductDetail.jsp?productDTO='a01'"><img class="card-img-top img-fluid" src="img/${list[0].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="front?key=read&productCode=${list[0].getProductCode()}'"><img class="card-img-top img-fluid" src="img/${list[0].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">${list[0].getProductName()}</a>
@@ -137,7 +137,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="front?key=read&productCode=${list[1]}"><img class="card-img-top img-fluid" src="img/${list[1].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="front?key=read&productCode=${list[1].getProductCode()}"><img class="card-img-top img-fluid" src="img/${list[1].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">${list[1].getProductName()}</a>
@@ -151,7 +151,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="front"><img class="card-img-top img-fluid" src="img/${list[2].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="front?key=read&productCode=${list[2].getProductCode()}"><img class="card-img-top img-fluid" src="img/${list[2].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">${list[2].getProductName()}</a>
@@ -165,7 +165,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="front"><img class="card-img-top img-fluid" src="img/${list[3].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="front?key=read&productCode=${list[3].getProductCode()}"><img class="card-img-top img-fluid" src="img/${list[3].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">${list[3].getProductName()}</a>
@@ -179,7 +179,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="front"><img class="card-img-top img-fluid" src="img/${list[4].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="front?key=read&productCode=${list[4].getProductCode()}"><img class="card-img-top img-fluid" src="img/${list[4].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">${list[4].getProductName()}</a>
@@ -193,7 +193,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="front"><img class="card-img-top img-fluid" src="img/${list[5].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="front?key=read&productCode=${list[5].getProductCode()}"><img class="card-img-top img-fluid" src="img/${list[5].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">${list[5].getProductName()}</a>
