@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kosta.model.dto.UserDTO;
 import kosta.model.service.UserService;
@@ -21,7 +22,10 @@ public class UpdateByUserController implements Controller {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		String userId = request.getParameter("userId");
+		HttpSession session = request.getSession();
+		
+		
+		String userId = (String) session.getAttribute("sessionId");
 		String userpwd = request.getParameter("userpwd");
 		String username = request.getParameter("username");
 		String age = request.getParameter("age");
