@@ -38,6 +38,11 @@ public class UserService {
 	 * 회원이 회원정보 보기
 	 * UserDTO viewMyInfo(String userId)
 	 * */
+		public static UserDTO viewMyInfo(String userId) throws SQLException{
+			UserDTO userDTO = userDAO.viewMyInfo(userId);
+			if(userDTO == null) throw new SQLException("오류발생. 아이디에 해당하는 정보 없음. 다시 시도해주세요.");
+			return userDTO;
+		}
 	
 	/**
 	 * 회원정보수정

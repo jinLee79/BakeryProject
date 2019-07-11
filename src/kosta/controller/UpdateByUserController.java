@@ -18,7 +18,7 @@ public class UpdateByUserController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String url = "errorView/error.jsp";
+		String url = "error.jsp";
 		
 		ModelAndView mv = new ModelAndView();
 		
@@ -26,12 +26,10 @@ public class UpdateByUserController implements Controller {
 		
 		
 		String userId = (String) session.getAttribute("sessionId");
-		String userpwd = request.getParameter("userpwd");
-		String username = request.getParameter("username");
+		String userPwd = request.getParameter("userPwd");
+		String userName = request.getParameter("userName");
 		String age = request.getParameter("age");
 		String phone = request.getParameter("phone");
-		String grade = request.getParameter("grade");
-		String point = request.getParameter("point");
 		
 		
 		

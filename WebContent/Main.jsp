@@ -124,7 +124,7 @@
         <div class="row">		
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="pductDetail.jsp?productDTO=${list[0]}"><img class="card-img-top img-fluid" src="img/${list[0].getfName()}" style = "width:250px; height:150px" alt=""></a>
+              <a href="pductDetail.jsp?productDTO='a01'"><img class="card-img-top img-fluid" src="img/${list[0].getfName()}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
                   <a href="#">${list[0].getProductName()}</a>

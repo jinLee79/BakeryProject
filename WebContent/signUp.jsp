@@ -25,7 +25,7 @@
      #topLogo{font-family: "Karma", sans-serif; font-size : 30px; vertical-align: bottom;}
      nav div div a{font-family: 'Jeju Hallasan',cursive;}
      body > nav > div > a {display:block; margin-left: 40%;}
-     h1, table{font-family: 'Jeju Hallasan',cursive;}
+     h1, table tr>td:nth-child(1) {font-family: 'Jeju Hallasan',cursive;}
      span{color: red; display: none;}
      table input[type = text], table input[type=password]{height: 22px;}
      select{height: 22px}
@@ -39,7 +39,7 @@
 
 <script>
   $(function(){
-	  $("#idcheck").keyup(function(){
+	  $("#userId").keyup(function(){
 		  if($(this).val()==""){
 			  return;
 		  }
@@ -56,6 +56,17 @@
 			  }
 		  });//ajaxEnd
 	  })//idcheck끝
+	  
+	  
+	  $("#pwdcheck").keyup(function(){
+		  if($(this).val()==$("#userPwd").val()){
+			  $("#pwdmsg").text("비밀번호가 일치합니다.");
+		  }
+		  if($(this).val()!=$("#userPwd").val()){
+			  $("#pwdmsg").text(" 비밀번호가 일치하지 않습니다.");
+		  }
+	  });//pwdcheck끝
+	  
 	});//ready끝
 
 	</script>
@@ -99,58 +110,62 @@
 	 
     	 
  <h1> 회원가입</h1>
- <table boder = "" bgcolor = "#f7f0da"  cellspacing = "1" >
-	 <form name="inForm" method="post" id="inForm">
+ <table boder = "1" bgcolor = "#f7f0da"  cellspacing = "1" >
+	 <form name="inForm" method="post" id="inForm"  action="front">
 		  <tr>
 			   <td text-align="center">아이디 </td>
-			   <td><input type=text" style="height: 22px" id="idcheck"/></td>
-			   <td><p id="idmsg">중복결과여부</p></td>
+			   <td><input type=text  style="height: 22px" id="userId"  name="userId"/></td>
+			   <td><div id="idmsg">중복결과여부</div></td>
 		  </tr>
 		
 		  <tr>
 			   <td> 비밀번호 </td>
-			   <td> <input type = "password"/> </td>
+			   <td> <input type = "password"  id="userPwd"  name="userPwd"/> </td>
 		  </tr>
 		
 		  <tr>
 			   <td> 비밀번호 확인 </td>
-			   <td> <input type = "password"/> </td>
+			   <td> <input type = "password"  id="pwdcheck" /> </td>
 		  </tr>
 		  
 		  <tr>
 			   <td> 　　　　 　　 </td>
-			   <td style="font-size: 13px"> *비밀번호를 다시 입력해주세요. </td>
+			   <td style="font-size: 13px" id="pwdmsg"> 비밀번호가 일치하지 않습니다. </td>
 		  </tr>
 		
 		  <tr>
 			   <td> 성명 </td>
-			   <td> <input type = "text"/> </td>
+			   <td> <input type = "text"  name="userName"/> </td>
 		  </tr>
 		
 			<tr>
 				<td>나이</td>
-				<td><input type = "text"/></td>
+				<td><input type = "text"  name="age"/></td>
 			</tr>
 		
 		  <tr>
 		 	  <td> 휴대폰 </td>
 			   <td> 
-			    <select>
+			    <select name="phone1">
 			     <option> 010 </option>
 			     <option> 011 </option>
 			     <option> 016 </option>
 			     <option> 018 </option>
 			    </select> 
-			    <input type = "text" size = "6"/> - <input type = "text" size = "6"/>
+			    <input type = "text" size = "6"  name="phone2"/> - <input type = "text" size = "6"  name="phone3"/>
 			   </td>
 		  </tr>
+		  <tr>
+		  <td><p></td>
+		  <td>
+		  <input type = "submit" value = "가입하기"/>
+		  <input type = "reset" value = "다시 입력"/>
+		  </td></tr>
 	 </form>
 </table>
 
 <br/>
 
-<input type = "submit" value = "가입하기"/>
-<input type = "reset" value = "다시 입력"/>
 
       </div>
       <!-- /.col-lg-9 -->

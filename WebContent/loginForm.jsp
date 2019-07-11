@@ -8,8 +8,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script type="text/javascript">
 
-
-
 		$(function() {
 		$("input[value = '로그아웃']").click(function() {
 
@@ -28,16 +26,13 @@
 		    
 		  });
 		 */
-		
 
-	
 	})
 </script>
 </head>
 <body>
 <aside> 
      
-    
     <%
  		if(session.getAttribute("sessionId")==null){ //세션에 id없을떄
  			%>
@@ -68,11 +63,7 @@
  		} 
     
     %>
-        
-
-	
-	
-
+ 
 </aside>
 </body>
 </html>

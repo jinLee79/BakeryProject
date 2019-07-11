@@ -112,8 +112,8 @@
 									</c:forEach>
 								</select> &nbsp;개
 								<input type="submit"  value="장바구니에 담기" >
+								<a href="${path}/index.jsp"  >메인페이지로</a>
 							</form>
-						<input type="button"  value="메인페이지로" onclick="location.href='${path}/index.jsp'"/>
 					</td>
 				</tr>
 			</table>
