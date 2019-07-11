@@ -11,11 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import kosta.model.dto.ProductDTO;
 import kosta.model.service.ProductService;
 
-
-
-public class SelectController implements Controller
+public class DetailController implements Controller
 {
- 
+
 	@Override
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException
@@ -25,7 +23,7 @@ public class SelectController implements Controller
 			//서비스 -> dao -> 그 결과를 list를 저장하고 list.jsp로 이동
 			List<ProductDTO> list = ProductService.selectAllProduct();
 			request.setAttribute("list", list);
-			url="MenuList.jsp";
+			url="menuList.jsp";
 		} catch(SQLException e) {
 			request.setAttribute("errorMsg", e.getMessage());
 		}

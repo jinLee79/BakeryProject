@@ -36,7 +36,7 @@ public class LoginController implements Controller {
 	       
 	   //    String sessionId=(String) session.getAttribute("sessionId");
 	       if(session.getAttribute("sessionId").equals("admin")) {
-	    	   url = "AdminIndex.jsp";
+	    	   url = "index2.jsp";
 	       }else url = "index.jsp"; 
 	       
 	       

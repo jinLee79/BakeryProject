@@ -51,7 +51,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0);" onclick="menuList();">제품 소개
+            <a class="nav-link" href="front?key=detail">제품 소개
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -63,7 +63,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="front">찾아오시는 길</a>
+            <a class="nav-link" href="location.jsp">찾아오시는 길</a>
           </li>
         </ul>
       </div>
@@ -206,7 +206,7 @@
       </div>
         <!-- /.row -->
         <div style = "width: 100%" align = "center">
-			<button type = "button" class = "btn btn-success" onclick = "location.href = 'front'">더보기</button>        
+			<button type = "button" class = "btn btn-success" onclick = "location.href = 'front?key=detail'">더보기</button>        
         </div>
         <br>
         </div>

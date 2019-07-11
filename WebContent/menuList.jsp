@@ -51,7 +51,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
          <li class="nav-item active">
-            <a class="nav-link" href="menuList.jsp">제품 소개
+            <a class="nav-link" href="front?key=detail">제품 소개
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -98,21 +98,21 @@
         <div class="row">
 		<%
 		%>
-		
+		<c:forEach items="${list }" var = "prod">
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="card h-100">
-              <a href="#"><img class="card-img-top img-fluid" src="img/커피번.jpg" style = "width:250px; height:150px" alt=""></a>
+              <a href="#"><img class="card-img-top img-fluid" src="${path }/img/${prod.fName}" style = "width:250px; height:150px" alt=""></a>
               <div class="card-body" style = "background-color: #CCCCCC">
                 <h4 class="card-title">
-                  <a href="#">Item One</a>
+                  <a href="#">${prod.productName}</a>
                 </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+                <h5>${prod.sellPrice }</h5>
+                <p class="card-text">${prod.description }</p>
               </div>
               
             </div>
           </div>
-
+</c:forEach>
         <!-- /.row -->
 		
 
