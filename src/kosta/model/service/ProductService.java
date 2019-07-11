@@ -30,9 +30,7 @@ public class ProductService {
 SQLException{
 		ProductDTO productDTO = productDAO.srchByProductCode(productCode);
 		if(productDTO==null) {
-			throw new SQLException(productCode+"번에 해당하는 제품이 없
-
-습니다.");
+			throw new SQLException(productCode+"번에 해당하는 제품이 없습니다.");
 		}
 		return productDTO;
 	}

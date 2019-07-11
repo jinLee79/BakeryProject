@@ -63,9 +63,7 @@ rs.getString("FNAME"));
 		Connection con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		String sql = "select * from product where upper(productcode)=upper
-
-(?)";
+		String sql = "select * from product where upper(productcode)=upper(?)";
 		try		{
 			con = DbUtil.getConnection();
 			ps = con.prepareStatement(sql);
@@ -205,9 +203,7 @@ rs.getString("fName"));
 		Connection con = null;
 		PreparedStatement ps = null;
 		int rs = 0;
-		String sql = "update product set productname=?, sellprice=?, 
-
-description=?. fname=? where productcode=?";
+		String sql = "update product set productname=?, sellprice=?, description=?. fname=? where productcode=?";
 		
 		try
 		{
