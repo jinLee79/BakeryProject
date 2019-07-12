@@ -165,7 +165,7 @@
               <tr align="center">
                  <td colspan ="2">
                 <input class="btn btn-danger btn-sm" type="submit" value="등록하기"/>
-               <input class="btn btn-danger btn-sm" type="button" value="뒤로가기"></td>
+               <input class="btn btn-danger btn-sm" type="button" value="뒤로가기" onclick = "history.back()"></td>
               </tr>
               
             </table>

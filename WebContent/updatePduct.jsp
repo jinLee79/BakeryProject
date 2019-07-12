@@ -130,7 +130,7 @@
 		  
 		<form name = "updateForm" action = "front?key=update" method = "post" enctype="multipart/form-data" onSubmit='return checkValid()'> 
             <table align="center" style="width: 500px; height: 300px;">
-               <h1 align="center">상품등록</h1>
+               <h1 align="center">상품수정</h1>
                 <tr align="center">
                     <td id="title" style="width: 35%;" align="right" >상품코드</td>
                    <td align="left"> <input style = "background: #CCCCCC" type = "text" name = "code" value = "<%=request.getParameter("productCode")%>" READONLY/> </td>
@@ -158,7 +158,7 @@
               <tr align="center">
                  <td colspan ="2">
                 <input class="btn btn-danger btn-sm" type="submit" value="수정하기"/>
-               <input class="btn btn-danger btn-sm" type="button" value="뒤로가기"></td>
+               <input class="btn btn-danger btn-sm" type="button" value="뒤로가기" onclick = "history.back()"></td>
               </tr>
               
             </table>
