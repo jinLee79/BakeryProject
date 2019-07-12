@@ -136,8 +136,10 @@ body>nav>div>a {
 											<td>${map.value.quantity}</td>
 										</tr>
 									</c:forEach>
-								</tbody>
+								</tbody>		
 							</table>
+							<input type = "text" size = "6"  name="rdate1"/>년 - <input type = "text" size = "6"  name="rdate2"/>월 - <input type = "text" size = "6"  name="rdate3"/>일
+							<a href="front?key=orderResult">[ 주문하기 ]</a>
 						</div>
 					</div>
 					<div class="card-footer small text-muted">Updated yesterday

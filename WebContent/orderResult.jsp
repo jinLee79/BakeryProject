@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +88,7 @@
 	 
     	 <h1 style="text-align: center; margin-top: 100px">주문완료 되었습니다.</h1>
     	 <br>
-    	 <button type = "button" class = "btn btn-link" style="margin-left: 230px">더 쇼핑하기</button>
+    	 <button type = "button" class = "btn btn-link" style="margin-left: 230px"  onclick="location.href='index.jsp'">더 쇼핑하기</button>
     	 <button type = "button" class = "btn btn-link"  onclick="location.href='front?key=myOrderlist'">주문목록 확인</button>
 
       </div>

@@ -22,8 +22,10 @@ public class OrderService {
 	/**
 	 * 내 주문목록 확인하기
 	 * */
-	 public static viewMyOrder() throws SQLException {
-		 orderDAO.viewMyOrder(userId);
+	 public static OrderDTO viewMyOrder(String userId) throws SQLException {
+		 OrderDTO orderDTO = orderDAO.viewMyOrder(userId);
+		 if(orderDTO==null) throw new SQLException("주문목록을 찾을 수 없습니다. 관리자에게 문의하세요.");
+		 return orderDTO;
 	 }
 	
 /////**이하 관리자기능**/////////////////////////////////////

@@ -74,5 +74,13 @@ public class OrderDTO {
 		this.orderState = orderState;
 	}
 
+	public List<OrderDetailsDTO> getOrderDetailList() {
+		return orderDetailList;
+	}
+
+	public void setOrderDetailList(List<OrderDetailsDTO> orderDetailList) {
+		this.orderDetailList = orderDetailList;
+	}
+
 	
 }

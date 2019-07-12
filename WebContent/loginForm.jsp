@@ -13,11 +13,11 @@
 		$(function() {
 		$("input[value = '로그아웃']").click(function() {
 
-		if(confirm("정말 로그아웃 할래?")){
+		if(confirm("로그아웃 하시겠습니까?")){
 	
 			location.href="Logout.jsp";
 		}else{
-			alert("서비스 더 이용해");
+			alert("서비스 계속 이용하세요.");
 		}
 	})
 	
