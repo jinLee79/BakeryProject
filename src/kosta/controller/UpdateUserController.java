@@ -32,7 +32,7 @@ public class UpdateUserController implements Controller {
 		
 		try {
 			UserService.updateMyInfo(userDTO); 
-			url = "front?key=view";
+			url = "updateUserResult.jsp";
 			mv.setRedirect(true);
 		}catch (SQLException e) {
 			request.setAttribute("errorMsg", e.getMessage());

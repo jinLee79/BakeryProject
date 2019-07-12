@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import kosta.model.dto.UserDTO;
 import kosta.model.service.UserService;
@@ -30,6 +31,9 @@ public class SignUpController implements Controller {
 		String url="error.jsp";
 		try {
 			 UserService.signUp(userDTO);
+			HttpSession session =  request.getSession();
+			session.setAttribute("sessionId", userId);
+			session.setAttribute("sessionName", userName);
 			 url = "signUpResult.jsp";
 		} catch(SQLException e) {
 			e.printStackTrace();

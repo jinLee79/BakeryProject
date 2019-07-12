@@ -255,7 +255,7 @@ function cartDelete(form){
 				
 									&nbsp;&nbsp;&nbsp;
 				
-									<a href="orderlist.jsp">[ 주문하기 ]</a>
+									<a href="orderResult.jsp">[ 주문하기 ]</a>
 				
 								</td>
 				

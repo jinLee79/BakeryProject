@@ -27,7 +27,7 @@
      #topLogo{font-family: 'Jeju Hallasan',cursive; font-size : 30px; vertical-align: middle;}
      nav div div a{font-family: 'Jeju Hallasan',cursive;}
      body > nav > div > a { margin-left: 20%;}
-     h1,table{font-family: 'Jeju Hallasan',cursive;}
+     h1,table tr>td:nth-child(1){font-family: 'Jeju Hallasan',cursive;}
      table input[type = text], table input[type=password]{height: 22px;}
      select{height: 22px}
   </style>
