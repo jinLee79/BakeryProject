@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,109 +98,35 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead style = "text-align:center; vertical-align: middle">
                   <tr>
-                    <th> 　이미지</th>
+                    <th> 　주문번호</th>
+                    <th> 　주문일</th>
+                    <th> 　예상수령일</th>
+                    <th> 　주문상태</th>
                     <th> 　상품코드</th>
-                    <th> 　상품명</th>
                     <th> 　수량</th>
-                    <th> 　단가</th>
-                    <th> 　가격</th>
-                    <th> 　삭제</th>
                   </tr>
                 </thead>
                 <tfoot style = "text-align:center; vertical-align: middle">
                   <tr>
-                    <th>이미지</th>
+                    <th>주문번호</th>
+                    <th>주문일</th>
+                    <th>예상수령일</th>
+                    <th>주문상태</th>
                     <th>상품코드</th>
-                    <th>상품명</th>
                     <th>수량</th>
-                    <th>단가</th>
-                    <th>가격</th>
-                    <th>삭제</th>
                   </tr>
                 </tfoot>
                 <tbody style = "text-align:center; vertical-align: bottom;">
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A08</td>
-                    <td>단팥빵</td>
-                    <td>3</td>
-                    <td>3000</td>
-                    <td>9000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A06</td>
-                    <td>소보루</td>
-                    <td>2</td>
-                    <td>3500</td>
-                    <td>7000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A04</td>
-                    <td>소세지빵</td>
-                    <td>5</td>
-                    <td>2000</td>
-                    <td>10000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A02</td>
-                    <td>메론빵</td>
-                    <td>3</td>
-                    <td>7000</td>
-                    <td>21000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A01</td>
-                    <td>식빵</td>
-                    <td>1</td>
-                    <td>6000</td>
-                    <td>6000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A03</td>
-                    <td>고로께</td>
-                    <td>2</td>
-                    <td>8000</td>
-                    <td>16000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A07</td>
-                    <td>감자빵</td>
-                    <td>5</td>
-                    <td>9000</td>
-                    <td>45000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A05</td>
-                    <td>옥수수식빵</td>
-                    <td>1</td>
-                    <td>10000</td>
-                    <td>10000</td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td><img src = "img/mainBread1.jpg" style = "width : 50px; height : 50px"></td>
-                    <td>A09</td>
-                    <td>치즈계란빵</td>
-                    <td>8</td>
-                    <td>11000</td>
-                    <td>88000</td>
-                    <td></td>
-                  </tr>
-                 
+                 <c:forEach items="${orderDTO.orderDetailList}"  var="detail">
+	                  <tr>
+	                    <td>${detail.productCode}</td>
+	                    <td>${orderDTO.orderdate}</td>
+	                    <td>${orderDTO.receivingdate}</td>
+	                    <td>${orderDTO.orderstate}</td>
+	                    <td>${orderDTO.productcode}</td>
+	                    <td>${orderDTO.quantity}</td>
+	                 </tr>
+				 </c:forEach>
                 </tbody>
               </table>
             </div>

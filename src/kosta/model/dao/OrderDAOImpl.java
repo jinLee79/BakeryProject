@@ -7,22 +7,22 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import kosta.dao.String;
-import kosta.dto.DeptDTO;
-import kosta.dto.EmpDTO;
 import kosta.model.dto.OrderDTO;
-import kosta.model.dto.ProductDTO;
+import kosta.model.dto.OrderDetailsDTO;
 import kosta.util.DbUtil;
 
 public class OrderDAOImpl implements OrderDAO
 {
+	/**
+	 * 주문넣기
+	 * */
 	@Override
 	public int insertOrder(OrderDTO orderDTO) throws SQLException
 	{
 		Connection con = null;
 		PreparedStatement ps = null;
 		int rs = 0;
-		String sql = "insert into orders values(null, sysdate, ?, ?, '결제완료', ?)";
+		String sql = "insert into orders values(0, sysdate, ?, ?, '결제완료', ?)";
 		
 		try
 		{
@@ -52,58 +52,32 @@ public class OrderDAOImpl implements OrderDAO
 		ResultSet rs = null;
 		OrderDTO orderDTO = null;
 		String sql = "select orders.orderno, orderdate, receivingdate, orderstate, ordertotal, productcode, quantity" + 
-				"from orders join order_detail on orders.orderno = order_detail.orderno and userid=?";
+				" from orders join order_detail on orders.orderno = order_detail.orderno and userid=?";
 	
-		try
-		{
-			con = DbUtil.getConnection();
-			ps = con.prepareStatement(sql);
-			ps.setString(1, userId);
-			rs = ps.executeQuery();
+		try{
+				con = DbUtil.getConnection();
+				ps = con.prepareStatement(sql);
+				ps.setString(1, userId);
+				rs = ps.executeQuery();
 			
-			while(rs.next()) {
-				int orderno = rs.getInt("orderno");
-				String orderdate = rs.getString("orderdate");
-				String receivingdate = rs.getString("receivingdate");
-				String orderstate = rs.getString("orderstate");
-				int ordertotal = rs.getInt("ordertotal");
-				orderDTO = new OrderDTO(orderno, userId, orderdate, receivingdate, ordertotal,orderstate);
-			}
-				OrderDTO dto = new OrderDTO(rs.getInt("orderNo"),
-						rs.getString("userId"), rs.getString("orderDate"),
-						rs.getString("receivingDate"), rs.getInt("orderTotal"),
-						rs.getString("orderState"));
-				list.add(dto);
-			}
-			
-			if(rs.next()) {
-				int dno = rs.getInt("deptno");
-				String loc = rs.getString("loc");
-				String dname = rs.getString("dname");
-				dto = new DeptDTO(dno,loc,dname);
-				
-				 List<EmpDTO> empList = dto.getEmplist();
-				 empList.add( new EmpDTO(rs.getInt("empno"), rs.getString("ename"), rs.getString("job"), rs.getInt("sal")));
-				
-				 while(rs.next()) {
-					 empList.add( new EmpDTO(rs.getInt("empno"), rs.getString("ename"), rs.getString("job"), rs.getInt("sal")));
+				if(rs.next()) {
+					int orderno = rs.getInt("orderno");
+					String orderdate = rs.getString("orderdate");
+					String receivingdate = rs.getString("receivingdate");
+					String orderstate = rs.getString("orderstate");
+					int ordertotal = rs.getInt("ordertotal");
+					orderDTO = new OrderDTO(orderno, userId, orderdate, receivingdate, ordertotal, orderstate);
+					
+					List<OrderDetailsDTO> orderDetailList = orderDTO.getOrderDetailList();
+					orderDetailList.add(new OrderDetailsDTO(rs.getString("productCode"), rs.getInt("quantity")));
+					while(rs.next()) {
+						orderDetailList.add(new OrderDetailsDTO(rs.getString("productCode"), rs.getInt("quantity")));
+					}
 				}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			return list;
-		}
-		finally
-		{
-			DbUtil.dbClose(rs, ps, con);
-		}
+			}finally {
+				DbUtil.dbClose(rs, ps, con);
+			}
+			return orderDTO;
 	}
 
 ////////////////**이하 관리자 기능**///////////////////////////////////////////////////////

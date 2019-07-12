@@ -19,15 +19,8 @@ public interface OrderDAO {
 	 * OrderDTO viewMyOrder(String userId)
 	 * select * from orders where userid=?
 	 * */
-	List<OrderDTO> viewMyOrder(String userId) throws SQLException;
+	OrderDTO viewMyOrder(String userId) throws SQLException;
 	
-	
-	/**
-	 * 주문목록에서 주문 취소
-	 * int cancelMyOrder(String userId)
-	 * delete from orders where userid=?
-	 * */
-	int cancelMyOrder(String userId) throws SQLException;
 	
 	/////**이하 관리자기능**/////////////////////////////////////
 

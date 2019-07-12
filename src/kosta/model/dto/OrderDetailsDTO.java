@@ -7,12 +7,14 @@ public class OrderDetailsDTO {
 	
 	public OrderDetailsDTO() {}
 	
-	public OrderDetailsDTO(int orderNo, String productCode, int quantity) {
-		this.orderNo = orderNo;
+	public OrderDetailsDTO(String productCode, int quantity) {
 		this.productCode = productCode;
 		this.quantity = quantity;
 	}
-
+	public OrderDetailsDTO(int orderNo, String productCode, int quantity) {
+		this(productCode, quantity);
+		this.orderNo = orderNo;
+	}
 	public int getOrderNo() {
 		return orderNo;
 	}
