@@ -1,12 +1,16 @@
+<%@page import="kosta.model.dto.CartDTO"%>
+<%@page import="kosta.model.dao.ProductDAOImpl"%>
+<%@page import="kosta.model.dao.ProductDAO"%>
 <%@page import="kosta.model.dto.ProductDTO"%>
 <%@page import="kosta.model.dto.OrderDTO"%>
 <%@page import="kosta.controller.CartController"%>
 <%@page import="java.util.Enumeration"%>
 <%@page import="java.util.HashMap"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <jsp:useBean id="cartcontroller" class="kosta.controller.CartController" scope="session"/>
-<jsp:useBean id="product" class="kosta.model.dto.ProductDTO" />
+<jsp:useBean id="proDAO" class="kosta.model.dao.ProductDAOImpl"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,6 +97,26 @@
 				</div>
 			</div>
       <!-- /.col-lg-3 -->
+  <script type="text/javascript">
+ function cartUpdate(form){
+
+	form.flag.value="update";
+
+	form.submit();
+
+}
+
+function cartDelete(form){
+
+	form.flag.value="delete";
+
+	form.submit();
+
+}
+
+
+
+</script>
 
 <div class="col-lg-9">
 <!-- DataTables Example -->
@@ -115,21 +139,12 @@
 				<th>주문상품</th><th>가격</th><th>수량</th><th>수정/삭제</th><th>조회</th>
 
 			</tr>
-														<%
-														//${Cart[cartList]}
-														Object[] objKey=Cart.keySet(). toArray();
-														for(int i=0;i<objKey.length;i++){
-														%>
-														<tr>
-														<td><%=objKey[i]%></td>
-														<td><%=Cart.get(objKey[i]) %></td>
-														</tr>
-														<%
-														}
 										
+														<%
+														
 
 						int totalPrice = 0;
-
+						HashMap<String, CartDTO> Cart = cartcontroller.getCartList();
 		
 
 				
@@ -148,27 +163,39 @@
 				
 							} else { 
 				
+								//맵에 저장했던거 가져오기
+								%>
+								<c:forEach var="cartMap" items="${cartList}"></c:forEach>
+									<c:set var="cartVal" value="${cartMap.key}"></c:set>
+									<td><c:out value=""></c:out>
+								<%
 								//카트의 모든 제품코드(키값)을 추출
 				
 								Enumeration<String> enu = Cart.keys();
-				
+								
+								Object[] objKey=Cart.keySet(). toArray();
+								for(int i=0;i<objKey.length;i++){
+								%>
+								<tr>
+								<td><%=objKey[i]%></td>
+								<td><%=Cart.get(objKey[i]) %></td>
+								</tr>
+								<%
+								}
 								while(enu.hasMoreElements()){ //남은 키 값이 있다면
 				
 										
 				
 									//해당 제품코드(키값)의 카트내용을 담음
-				
-									CartDTO order = (CartDTO)Cart.get(enu.nextElement());
-				
-										
-				
+									CartDTO cdto = (CartDTO)Cart.get(enu.nextElement());
+			
 									//해당 제품코드의 제품정보를 db에서 가져옴
-				
+									ProductDTO pdto = proDAO.srchByProductCode(cdto.getProductCode());
 									
 				
 										
 				
-									int price =(int)( request.getAttribute("sellprice"));
+									int price =pdto.getSellPrice();
 				
 									int quantity = (int)( request.getAttribute("quantity"));
 				
@@ -182,13 +209,13 @@
 				
 								<tr style="text-align: center;">
 				
-									<td><%=product.getProductName() %></td>
+									<td><%=pdto.getProductName() %></td>
 				
 									<td><%=subTotal %></td>
 				
 									<td>
 				
-										<input type="text" name="quantity" size="5" value="<%=order.getQuantity() %>" style="text-align: center;">
+										<input type="text" name="quantity" size="5" value="<%=cdto.getQuantity() %>" style="text-align: center;">
 				
 									</td>
 				
@@ -198,7 +225,7 @@
 				
 										<input type="hidden" name="flag">
 				
-										<input type="hidden" name="productCode" value="<%=product.getProductName() %>">
+										<input type="hidden" name="productCode" value="<%=pdto.getProductName() %>">
 				
 										<!-- 수정/삭제 버튼 -->
 				
@@ -208,7 +235,7 @@
 				
 									</td>
 				
-									<td><a href="javascript:productDetail('<%=product.getProductCode()%>')">상세보기</a></td>
+									<td><a href="javascript:productDetail('<%=pdto.getProductCode()%>')">상세보기</a></td>
 				
 								</tr>
 				
@@ -262,26 +289,6 @@
 
 </div>
   <!-- ------------------------------------------ -->
-  <script type="text/javascript">
- function cartUpdate(form){
-
-	form.flag.value="update";
-
-	form.submit();
-
-}
-
-function cartDelete(form){
-
-	form.flag.value="delete";
-
-	form.submit();
-
-}
-
-
-
-</script>
 
 
 
