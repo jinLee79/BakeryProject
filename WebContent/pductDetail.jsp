@@ -104,7 +104,7 @@
 					<tr align="center">
 						<td colspan="2">
 							<form name="form1"  id="form1" method="post" action="front" >
-								<input type="hidden" name="key"  value="cart2">
+								<input type="hidden" name="key"  value="cart">
 								<input type="hidden" name="productName"  value="${productDTO.productName}">
 								<input type="hidden" name="sellPrice"  value="${productDTO.sellPrice}">
 								<input type="hidden" name="productCode"  value="${productDTO.productCode }">
