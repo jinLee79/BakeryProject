@@ -30,8 +30,6 @@ public class SignUpController implements Controller {
 		String url="error.jsp";
 		try {
 			 UserService.signUp(userDTO);
-			 request.setAttribute("userId", userId);
-			 request.setAttribute("userPwd", userPwd);
 			 url = "signUpResult.jsp";
 		} catch(SQLException e) {
 			e.printStackTrace();

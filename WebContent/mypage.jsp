@@ -33,26 +33,48 @@
   </style>
   
   <script>
-  $(function(){
-
-	function viewMyInfo(){
-
-	   $("body > div.container > div > div.col-lg-9 > form > table > tbody > tr:nth-child(1) > td:nth-child(2) > input[type=text]").val(<%=userDTO.getUserId%>);
-	   $("body > div.container > div > div.col-lg-9 > form > table > tbody > tr:nth-child(2) > td:nth-child(2) > input[type=password]").val(<%=userDTO.getUserPwd%>);
-	   $("body > div.container > div > div.col-lg-9 > form > table > tbody > tr:nth-child(3) > td:nth-child(2) > input[type=text]").val(<%=userDTO.getUserName%>);
-	   $("body > div.container > div > div.col-lg-9 > form > table > tbody > tr:nth-child(4) > td:nth-child(2) > input[type=text]").val(<%=userDTO.getAge%>);
-	   $("body > div.container > div > div.col-lg-9 > form > table > tbody > tr:nth-child(5) > td:nth-child(2) > input[type=text]").val(<%=userDTO.getPhone%>);
+  function checkValid() {
+		var f = window.document.updateUserForm;
+		if ( f.userPwd.value == "" ) {
+			alert( "비밀번호를 입력해 주세요." );
+			f.userPwd.focus();
+			return false;
+		}
+		if ( f.userName.value == "" ) {
+	        alert( "비밀번호를 입력해 주세요" );
+	        f.userName.focus();
+	        return false;
+	    }
+		if ( f.age.value == "" ) {
+			alert( "나이를 입력해 주세요." );
+			f.age.focus();
+			return false;
+		}
+		if ( f.phone.value == "" ) {
+	        alert( "연락처를 입력해 주세요." );
+	        f.phone.focus();
+	        return false;
+	    }
 	}
-	
-  });//readyEnd 
+  
+  	function sendDelete(){//삭제
+		if(document.updateUserForm.password.value==""){
+			alert("삭제를 위한 비밀번호를 입력해주세요.");
+			document.updateUserForm.password.focus();
+			return;
+		}
+  
+  $(function(){
+	  $(document).on("click", "body > div.container > div > div.col-lg-9 > form > table > tbody > tr:nth-child(6) > td > input[type=submit]:nth-child(1)", function(){
+		  alert("회원정보 수정되었습니다!")
+	  })
+  })
+  
   </script>
-
-
-
-
+  
 </head>
 
-<body onload="location.href='front?key=view'">
+<body>
   <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0d4633">
     <div class="container">
@@ -100,41 +122,34 @@
     <div class="col-lg-9">
     
  <br>
-        <form method="post" action="front?key=updateUser"  name="userInfo" >          
+        <form method="post" action="front"  name="updateUserForm"  onSubmit="return checkValid()">
+         	<input type="hidden" name="key" value="updateUser" >          
             <table align="center" style="width: 500px; height: 300px;">
 	               <h1 align="center">회원정보</h1>
 		                <tr align="center">
 			                    <td id="title" style="width: 35%;" align="right" >아이디</td>
-			                   	<td align="left"> <input type = "text"  readonly/> </td>
+			                   	<td align="left"> <input type = "text"  value=${requestScope.userDTO.userId} readonly/></td>
 		                </tr>
 		                <tr>
 			                    <td id="title" style="width: 35%;" align="right" >비밀번호</td>
-			                    <td><input type="password" name="userPwd" maxlength="50" ></td>
+			                    <td><input type="password"  value=${userDTO.userPwd} name="userPwd" maxlength="50" ></td>
 		                </tr>
 		                <tr>
 			                    <td id="title" style="width: 35%;" align="right">이름</td>
-			                    <td> <input type = "text"  name="userName"/> </td>
+			                    <td> <input type = "text"  value=${userDTO.userName} name="userName"/></td>
 		                </tr>
 		                <tr>
 			                    <td id="title" style="width: 35%;" align="right" >나이</td>
-			                    <td> <input type = "text"  name="age"/> </td>
+			                    <td> <input type = "text"   value=${userDTO.age} name="age"/></td>
 		                </tr>
 		                <tr>
 			                    <td id="title" style="width: 35%;" align="right" >휴대전화</td>
-			                    <td name="phone"> 
-			                    <select>
-			                    <option> 010 </option>
-			                    <option> 011 </option>
-			                    <option> 016 </option>
-			                    <option> 018 </option>
-			                    </select> 
-			                    <input type = "text" size = "12"/>
-			                	</td>
+			                    <td> <input type = "text"  value=${userDTO.phone} name="phone"/></td>
 		              	 </tr>
-			              <tr align="center">
-			                 <td colspan ="2"><input type="submit" value="수정하기"/>
-			               <input type="button" value="메인으로" onclick="location.href='index.jsp'"></td>
-			              </tr>
+			             <tr align="center">
+			               	 	<td colspan ="2"><input type="submit" value="수정하기"/>
+			               		<input type="button" value="메인으로" onclick="location.href='index.jsp'"></td>
+			             </tr>
             </table>
         </form>
 

@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script>
 	alert('회원 가입되었습니다! 2000포인트 지급되었습니다!');
-	location.href = "front?key=login&id="+${userId}+"&pwd="+${userPwd};
+	location.href = "front?key=login&id="+${param.userId}+"&pwd="+${param.userPwd};
 </script>
 
 </head>

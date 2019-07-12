@@ -56,7 +56,7 @@
  	         <h5>즐거운 빵 쇼핑 되세요~^-^</h5><br>
 		
  	         
- 	       <input type="button"   class = "btn btn-info btn-rm" onclick=" location.href='mypage.jsp'" value="회원정보수정">
+ 	       <input type="button"   class = "btn btn-info btn-rm" onclick=" location.href='front?key=view'" value="회원정보수정">
              <input type="button"  class = "btn btn-info btn-rm"  value="로그아웃" id = "logout">
 	
  			<%

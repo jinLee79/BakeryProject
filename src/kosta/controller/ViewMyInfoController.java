@@ -27,6 +27,7 @@ public class ViewMyInfoController implements Controller {
 			mv.setPath("mypage.jsp");
 		} catch(SQLException e) {
 			e.printStackTrace();
+			request.setAttribute("errorMsg", e.getMessage());
 		}
 		return mv;
 	}

@@ -136,25 +136,7 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return result;
 	}
-	//회원 탈퇴
-	@Override
-	public int deleteMyInfo(String userId, String userPwd) throws SQLException {
-		Connection con = null;
-		PreparedStatement ps = null;
-		int result = 0;
-		String sql ="delete from users where userid=? and userpwd=?";
-		try {
-			con = DbUtil.getConnection();
-			ps = con.prepareStatement(sql);
-			ps.setString(1, userId);
-			ps.setString(2,  userPwd);
-			result = ps.executeUpdate();
-		} finally {
-			DbUtil.dbClose(ps, con);
-		}
-		return result;
-	}
-	
+
 /////**이하 관리자기능**/////////////////////////////////////
 	/**
 	 * 회원 전체 목록 검색

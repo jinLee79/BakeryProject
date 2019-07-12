@@ -37,13 +37,7 @@ public interface UserDAO {
 	 * update users set userpwd=?, username=?, age=?,  phone=? where userid=? and userpwd=?
 	 * */
 	 int updateMyInfo(UserDTO userDTO) throws SQLException;
-	 
-	/**
-	 * 회원 탈퇴
-	 * delete from users where userid=? and userpwd=?
-	 * */
-	 int deleteMyInfo(String userId, String userPwd)  throws SQLException;
-	 
+
 	 
 	/////**이하 관리자기능**/////////////////////////////////////
 	/**
