@@ -1,5 +1,8 @@
 package kosta.model.dto;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrderDTO {
 	
 	private int orderNo; //주문번호
@@ -8,6 +11,8 @@ public class OrderDTO {
 	private String receivingDate; //예상수령일
 	private int orderTotal;  //주문총금액
 	private String orderState; //주문상태
+	
+	private List<OrderDetailsDTO> orderDetailList = new ArrayList<>();
 	
 	public OrderDTO() {	}
 
