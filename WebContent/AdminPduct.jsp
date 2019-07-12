@@ -64,7 +64,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="AdminOrder.jsp">주문 관리
+            <a class="nav-link" href="front?key=adminorder">주문 관리
               <span class="sr-only">(current)</span>
             </a>
           </li>
