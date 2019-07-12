@@ -2,6 +2,8 @@ package kosta.model.service;
 
 import java.sql.SQLException;
 
+import java.util.List;
+
 import kosta.model.dao.UserDAO;
 import kosta.model.dao.UserDAOImpl;
 import kosta.model.dto.UserDTO;
@@ -70,7 +72,7 @@ public class UserService {
 		 *  List<UserDTO> searchAllUsers()
 		 * */
 			public static List<UserDTO> searchAllUsers()throws SQLException {
-				List<UserDTO> list = userDAO.searchAllUsers();
+				List<UserDTO> list=userDAO.searchAllUsers();
 				return list;
 			}
 		

@@ -8,9 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kosta.model.dto.ProductDTO;
 import kosta.model.dto.UserDTO;
-import kosta.model.service.ProductService;
 import kosta.model.service.UserService;
 
 public class UserListController implements Controller {

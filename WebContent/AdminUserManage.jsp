@@ -54,7 +54,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="AdminPduct.jsp">상품 관리
+            <a class="nav-link" href="front?key=adminmanage"">상품 관리
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -66,7 +66,7 @@
           </li>
           
            <li class="nav-item active">
-            <a class="nav-link" href="AdminUserManage.jsp">회원 관리</a>
+            <a class="nav-link" href="front?key=userlist">회원 관리</a>
           </li>
         </ul>
       </div>
@@ -145,7 +145,6 @@
               </table>
             </div>
           </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
         </div>
 
       </div>

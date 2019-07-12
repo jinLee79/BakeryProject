@@ -64,7 +64,7 @@
           </li>
           
           <li class="nav-item">
-            <a class="nav-link" href="AdminUserManage.jsp">회원 관리</a>
+            <a class="nav-link" href="front?key=userlist">회원 관리</a>
           </li>
         </ul>
       </div>
