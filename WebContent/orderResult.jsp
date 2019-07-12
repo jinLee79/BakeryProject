@@ -88,7 +88,7 @@
     	 <h1 style="text-align: center; margin-top: 100px">주문완료 되었습니다.</h1>
     	 <br>
     	 <button type = "button" class = "btn btn-link" style="margin-left: 230px">더 쇼핑하기</button>
-    	 <button type = "button" class = "btn btn-link"  onclick="location.href='front?key=orderlist'">주문목록 확인</button>
+    	 <button type = "button" class = "btn btn-link"  onclick="location.href='front?key=myOrderlist'">주문목록 확인</button>
 
       </div>
       <!-- /.col-lg-9 -->

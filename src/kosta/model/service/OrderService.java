@@ -7,15 +7,24 @@ import kosta.model.dao.OrderDAO;
 import kosta.model.dao.OrderDAOImpl;
 import kosta.model.dto.OrderDTO;
 
-public interface OrderService {
+public class OrderService {
 	public static OrderDAO orderDAO = new OrderDAOImpl();
 
 	/**
 	 * 장바구니에서 상품 선택해서 주문하기
 	 * */
+	public static int insertOrder(OrderDTO orderDTO) throws SQLException{
+		int result = orderDAO.insertOrder(orderDTO);
+		if(result!=1) throw new SQLException("주문이 정상적으로 완료되지 않았습니다. 관리자에게 문의하세요.");
+		return result;
+	}
 	
-	//수정수정
-	
+	/**
+	 * 내 주문목록 확인하기
+	 * */
+	 public static viewMyOrder() throws SQLException {
+		 orderDAO.viewMyOrder(userId);
+	 }
 	
 /////**이하 관리자기능**/////////////////////////////////////
 		/**
